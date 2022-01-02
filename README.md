@@ -28,7 +28,7 @@ La estrema soggettività sul giudizio estetico relativo di una riproduzione sono
 
 Di fatto queste considerazioni hanno portato dividere il mercato degli apparati audio di qualità in due grandi segmenti: 
 *PRO* e *HI-END*,
-il primo ricercan la massima fedeltà alla registrazione (che spesso è ben altra cosa rispetto alla fedeltà all'evento), i secondi prediligono la piacevolezza di ascolto o una evocazione emotiva dell'evento originario (che spesso nessuno ha mai potuto ascoltare).
+il primo ricerca la massima fedeltà alla registrazione (che spesso è ben altra cosa rispetto alla fedeltà all'evento), i secondi prediligono la piacevolezza di ascolto o una evocazione emotiva dell'evento originario (che spesso nessuno ha mai potuto ascoltare).
 
 Oggi esistono [standard](https://www.aes.org/e-lib/browse.cfm?elib=4782) per una sala di ascolto "pro", in virtù dell'esistenza di un riferimento ultimo oggettivo mirato alla riduzione di qualsivoglia colorazione del segnale originale, ma non esistono standard per un ascolto di tipo *edonistico* in cui alcune colorazioni, sono addirittura ricercate: si pensi al suono prodotto dalla naturale saturazione delle valvole o dalla compressione del nastro magnetico. Occorre anche dire che, anche  in assenza di standard,  alcune esperienze di ascolto HI-END sono riconosciute appaganti, se non universalmente almeno a grande maggioranza; ad esempio sono pochi quelli che non si emozionano ascoltando la voce di Louis Armstrong su una copia di vecchie casse elettrostatiche, magari proveniente da una copia del master originale su registratore a bobine. Peccato però che lo stesso impianto, alle prese con una moderna registrazione di musica elettronica risulti del tutto inadeguato a riprodurre la necessaria pressione sonora (soprattutto nelle basse frequenze). Situazione inversa se si prendono in considerazione impianti di alta qualità basati su potenti diffusori a tromba.
 
@@ -39,7 +39,7 @@ In sostanza si può ragionevolmente  affermare che ogni impianto possiede una pr
 Questo progetto si propone di utilizzare le tecnologie di rendering audio 3d, le tecnologie di convoluzione e auralizzazione per realizzare una sala d'ascolto domestica a relativo  basso costo in cui replicare l'esperienza emotiva che si ottiene con diverse tipologie di impianti HI-END. Il tutto senza doverne subire il costo e permettendosi di cambiare impianto (virtualmente) anche ad ogni brano musicale adattando al proprio gusto estetico e non viceversa come spesso avviene oggi.
 
 L’idea alla base del progetto è di descrivere tramite strumenti matematici (es. impulsi):
-- la funzione di trasferimento di sala di ascolto di riferimento in cui è opera una  configurazione di componenti per la riproduzione audio (*target*)
+- la funzione di trasferimento di sala di ascolto di riferimento in cui opera una configurazione di componenti per la riproduzione audio (*target*)
 - la funzione di trasferimento della propria sala di ascolto
 
 Utilizzare poi queste funzioni per computare una trasformazione del segnale in ingresso che simuli, nel proprio ambiente domestico, un'esperienza di ascolto simile a quella ottenuta ascoltando lo stesso segnale registrato nella sala di ascolto target.
