@@ -55,10 +55,10 @@ well... how it could works is simplified in this wokflow:
 
 the main open point is how to capture the footprint of the target HI-END system. In a first step a *trial and error* approach can be used.
 
-Some well known re-mastering tecniques (eq, multiband compressions, reverberation, etc. etc.) can be also applied in real time to mimic the HI-END macro-characteristics.
+Some well known re-mastering tecniques (eq, multiband compressions, reverberation, etc. etc.) can be also applied in real time to mimic the macro-characteristics of the HI-END system.
 ## Vincoli
 
-Nonostante la volontà di operare in modo più possibile scientifico, è ragionevole ipotizzare che nella pratica alcuni requisiti imposti dalla teoria non possano essere rispettati e quindi occorra scendere a compromessi. Tali compromessi renderanno i risultati di questo progetto comunque soggettivi, difficilmente replicabili e migliorabili. Con questa consapevolezza in questo progetto accettiamo di applicare i seguenti requisiti:
+È ragionevole ipotizzare che nella pratica alcuni requisiti imposti dalla teoria non possano essere rispettati e quindi occorra scendere a compromessi. Tali compromessi renderanno i risultati di questo progetto comunque soggettivi, difficilmente replicabili e migliorabili. Con questa consapevolezza in questo progetto accettiamo di applicare i seguenti requisiti:
 
 - la stanza di ascolto domestica dovrà essere dedicata all’ascolto, nel senso che il suo arredamento non deve mutare sovente nel tempo, per evitare di dover ricomputare ad ogni cambiamento la sua funzione di trasferimento.
 - il sistema sarà ottimizzato per un unico punto di ascolto (*hot spot*), in modo non dissimile a quanto avviene oggi con un normale impianto stereo.
