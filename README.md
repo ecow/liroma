@@ -111,11 +111,8 @@ Molti punti in questo progetto sono aperti, per ciascuno di questi è stata aper
 Sono al momento aperti i seguenti temi di discussione:
 
 - [what’s the best digital prcessing pipeline manager: simple VST host or DAW?](https://pol.is/9wpnehy6ue)
-- [SPS or ambisonics: what plugins to use?]()
-- [Multichannel remastering: what plugins?]()
-- [DSP and digital network: what HW technologies]()
-- [best buy for speakers and amp?]()
-- [architecture hints]()
+- [SPS or ambisonics: what plugins?](https://pol.is/5ka3essadr)
+- [Best buy suggestions for speakers and amp in LIROMA?](https://pol.is/8eardcdusj)
 
 Ovviamente vi prego di segnalare ogni errore, omissione, richiesta di estensione nelle [issues](https://github.com/ecow/liroma/issues) di questo progetto.
 ## Licenza
