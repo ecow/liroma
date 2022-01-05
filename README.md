@@ -46,7 +46,10 @@ L’idea alla base del progetto è di descrivere tramite strumenti matematici (e
 
 Utilizzare poi queste funzioni per computare una trasformazione del segnale in ingresso che replichi, nel proprio ambiente domestico, l'esperienza di ascolto in una sala ottimizzata per il proprio gusto e per lo specifico brano che si sta ascoltando.
 
-Se l’obiettivo fosse raggiunto, semplicemente cambiando solo la prima delle funzione in ingresso, sarebbe possibile ascoltare un segnale registrato così come riprodotto da un qualsiasi impianto senza alcuna modifica fisica al proprio sistema di riproduzione. Ad esempio ascoltare Luis Amstrong con casse elettrostatiche, o un solo di Marcus Miller con un potente sistema a trombe o godersi l'ultima registrazione pubblicata in formato Dolby ATMOS.
+L'insieme dei vincoli cui il progetto e assoggettato lo collocano nel dominio del puro entertaiment anche se, con le opportune tare,  potrebbe essere considerato un test bed per un progetto più ambizioso.
+
+Se l’obiettivo teorico fosse infatti pienamente raggiunto, semplicemente cambiando solo la prima delle funzione in ingresso, sarebbe possibile ascoltare un segnale registrato così come riprodotto da un qualsiasi impianto (pro o hi-end) senza alcuna modifica fisica al proprio sistema di riproduzione. Ad esempio ascoltare Luis Amstrong con casse elettrostatiche, o un solo di Marcus Miller con un potente sistema a trombe ma anche mixare l'audio di un filmato in formato stereo, 5.1, 7.1 e Dolby ATMOS.
+
 
 ## How it works
 
@@ -59,29 +62,30 @@ the main open point is how to capture the footprint of the target HI-FI system. 
 
 Some well known re-mastering tecniques (linear phase equalization, multiband compressions, reverberation, etc. etc.) can be also applied in real time to the source signal according your personal taste.
 ## Vincoli
-Nonostante il tentativo di operare in modo più possibile scientifico, è ragionevole ipotizzare che nella pratica alcune condizioni ideali assunte dalla teoria non possano essere rispettate e quindi occorra scendere a compromessi. Tali compromessi renderanno i risultati di questo progetto comunque soggettivi, difficilmente replicabili e migliorabili. Con questa consapevolezza in questo progetto accettiamo di applicare i seguenti vincoli:
+Nonostante il tentativo di operare in modo più possibile scientifico, è ragionevole ipotizzare che nella pratica alcune condizioni ideali assunte dalla teoria non possano essere rispettate e quindi occorra scendere a compromessi. Tali compromessi renderanno i risultati di questo progetto comunque soggettivi e difficilmente replicabili. Con questa consapevolezza in questo progetto accettiamo di applicare i seguenti vincoli:
 
 - la stanza di ascolto domestica dovrà essere dedicata all’ascolto, nel senso che il suo arredamento non deve mutare sovente nel tempo, per evitare di dover ricomputare ad ogni cambiamento la sua funzione di trasferimento.
 - il sistema sarà ottimizzato per un unico punto di ascolto (*hot spot*), in modo non dissimile a quanto avviene oggi con un normale impianto stereo.
-- al fine di semplificare la vita agli algoritmi di auralizzazione e correzione acustica, la sala di ascolto dovrà essere trattata acusticamente per limitare i macro difetti (es.onde stazionarie) e le riflessioni sulle alte frequenze, in particolare le prime riflessioni, almeno nell’hot spot
-- la stanza di ascolto dovrà contenere almeno 15 casse acustiche indipendenti di cui almeno una dedicata ai bassi profondi (sotto i 100Hz). L’utilizzo di uno o più sub è finalizzato a ridurre le dimensioni delle casse e quindi il loro costo ma anche a minimizzare i problemi con le fasi,
+- la sala di ascolto dovrà essere trattata acusticamente per limitare onde stazionarie e prime riflessioni, almeno nell’hot spot
+- la stanza di ascolto dovrebbe contenere da 12 a 16 casse acustiche indipendenti e almeno un sub woofer dedicato ai bassi sotto i 100Hz. L’utilizzo di uno o più sub è finalizzato a sia ridurre le dimensioni delle casse e quindi il loro costo ma anche a minimizzare i problemi con le fasi rendendo quanto più possibile le sorgenti puntiformi
 - il segnale in ingresso sarà esclusivamente digitale, il che significa che eventuali sorgenti analogiche dovranno subire un processo di digitalizzazione *prima* di essere riprodotte
-- il sistema di altoparlanti deve essere in grado di erogare nell’ hot spot  una pressione di **83 dB SPL** calcolato su con un segnale di calibrazione e permettere di avere un picco di SPL di almeno 103dB come consigliato da Bob Kats nel cap.14 del suo libro "Mastering Audio". Tale valore potrebbe essere incrementato a 93 dB SPL se si desidera seguire le specifiche [THX](http://www.acousticfrontiers.com/2013314thx-reference-level/) 
+- il sistema di altoparlanti deve essere in grado di erogare nell’hot spot una pressione di **83 dB SPL** calcolato su con un segnale di calibrazione e permettere di avere un picco di SPL di almeno 103dB come consigliato da Bob Kats nel cap.14 del suo libro "Mastering Audio". Tale valore potrebbe essere incrementato a 93 dB SPL se si desidera seguire le specifiche [THX](http://www.acousticfrontiers.com/2013314thx-reference-level/) 
 - il sistema di altoparlanti deve avere  una risposta di frequenza senza eccessivi sbalzi almeno nel range 100-18K anche la rotazione di fase non dovrebbe avere eccessivi salti.
 - il sistema di altoparlanti deve comprendere almeno un sub woofer in grado di emettere le frequenze da 20Hz con una pressione sonora di picco di 115db nell’hot spot in accordo con le specifiche THX. Si noti come tale requisito si rifletta sulla necessità nei fatti di avere uno o più subwoofer molto grossi e performanti
 - la distorsione armonica indotta dall'amplificazione dovrebbe mantenersi sotto la soglia di 0.1 db
-- la distorsione armonica delle casse sia più bassa possibile al valore di pressione nominale richiesto (che valore mettere come riferimento?)
-- il rapporto segnale rumore totale degli apparati deve essere molto basso, comunque inferiore a quello della stanza con impianto spento ( cioè circa < 23 dB SPL nel migliore dei casi). Questo significa avere un range dinamico utile di circa 80dB, pari a poco più di 13 bit e quindi parecchio inferiore al limite teorico di 96dB risultanti dalle specifiche di un CD, ma comunque molto superiore alla reale risoluzione nella quasi totalità delle registrazioni commerciali (vedi [loudness war db](https://dr.loudness-war.info/)), al vinile (in un intorno di 55dD SNR) e ai master analogici su nastri (circa 70db SNR). Ad aggiungere rumore si fa sempre in tempo, e [può essere conveniente farlo](https://www.musicradar.com/tuition/tech/10-ways-to-use-noise-to-enhance-your-mixes-633348) perché anche il rumore di fondo concorre alla fisionomia di un impianto e comunque la dinamica percepita non sempre coincide con quella teorica (come nel caso degli LP ad esempio). D'altronde il dithering è prassi consolidata, se non obbligatoria, anche nei processi di mastering.
+- la distorsione armonica delle casse sia più bassa possibile al valore di pressione nominale richiesto (che valore mettere come riferimento? come misurarlo?)
+- il rumore totale deve essere molto basso, cioè circa nel range tra 20 e 30 dB SPL. 
 
-Si osservi che la assoluta linearità di risposta in fase e in frequenza non è posta come requisito, ciò perché gli algoritmi di DRC e auralizzazione permettono di correggere sia fase che risposta in frequenza entro ragionevoli vincoli; peraltro la rotazione di fase e  non linearità di risposta in frequenza sono  inevitabilmente introdotta da qualsiasi ambiente di ascolto che non sia anecoico. Infine propripo la distorsione in fase e in frequenza sono due delle principali componenti che caratterizzano la timbrica complessiva dell’impianto. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro* potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
+> Il progetto prevede un range dinamico utile di circa 80dB, pari a poco più di 13 bit e quindi parecchio inferiore al limite teorico di 96dB risultanti dalle specifiche di un CD, ma comunque molto superiore alla reale risoluzione nella quasi totalità delle registrazioni commerciali (vedi [loudness war db](https://dr.loudness-war.info/)). Ad aggiungere rumore si fa sempre in tempo, e [può essere conveniente farlo](https://www.musicradar.com/tuition/tech/10-ways-to-use-noise-to-enhance-your-mixes-633348) perché anche il rumore di fondo concorre alla fisionomia di un impianto e comunque la dinamica percepita non sempre coincide con quella teorica (come nel caso degli LP ad esempio). D'altronde il dithering è prassi consolidata, se non obbligatoria, anche nei processi di mastering.
+
+> Si osservi anche che la assoluta linearità di risposta in fase e in frequenza non è un requisito, ciò perché gli algoritmi di DRC e auralizzazione permettono di correggere sia fase che risposta in frequenza se entro ragionevoli limiti; peraltro la rotazione di fase e la non linearità di risposta in frequenza sono inevitabilmente introdotte da qualsiasi ambiente di ascolto che non sia anecoico e sono peraltro le principali componenti che caratterizzano un impianto di riproduzione audio. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro* potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
 
 I seguenti vincoli sono poi utili per semplificare la complessità ddel sistema:
 
-- le casse dovrebbero essere identiche o almeno molto simili anche se gli algoritmi di DRC permettono teoricamente di armonizzare il suono di casse lievemente diverse
+- le casse dovrebbero essere identiche o almeno molto simili anche se gli algoritmi di DRC permettono  di armonizzare il suono di casse lievemente diverse
 - le casse devono essere direzionali e proiettare il suono prevalentemente frontalmente (no dipoli) per poter predire e limitare le prime riflessioni
-- il posizionamento delle casse dovrebbe essere preferibilmente simmetrico rispetto all’hot-spot; in una situazione ottimale le casse dovrebbero essere equidistanti. Anche in questo caso è comunque prevista nel progetto una correzione dell’allineamento temporale e di e volume di emissione
+- il posizionamento delle casse dovrebbe essere preferibilmente simmetrico rispetto all’hot-spot rispetto all'asse nord sud; in una situazione ottimale le casse dovrebbero essere collocate simmetricamente sulla superficie di una sfera con al centro l'hot spot. Anche in questo caso è comunque prevista nel progetto una correzione dell’allineamento temporale e di e volume di emissione per compensare eventuali piccole differenze.
 - la frequenza di campionamento per il trattamento dei segnali digitali è fissata a 48Khz con una risoluzione di 24bit al fine di limitare la potenza computazionale necessaria e per permettere di utilizzare protocolli e linee di trasmissione economiche (8 canali su una singola fibra ottica ADAT). Si osserva come comunque tale frequenza e risoluzione sono ampiamente sufficienti a realizzare i vincoli di pressione acustica e SNR richiesti. Di contro, eventuali risoluzioni più alte o più basse sul segnale in ingresso richiederanno un ricampionamento non critico grazie agli algoritmi di down-sampling oggi disponibili.
-
 
 ## Requisiti funzionali
 
@@ -98,14 +102,14 @@ I requisiti funzionali sono raccolti nel seguente diagramma:
 ![functional view](images/functional-view.png)
 ## Deploy example
 
-La seguente figura mostra una possibile configurazione di deploy del progetto:
+La seguente figura mostra una possibile configurazione logica per il deploy del progetto:
 
 ![deploy view](images/deploy-view.png)
 
 Sono previste due aree fisiche distinte:
 - un'area in cui collocare la strumentazione rumorosa, principalmente a causa di ventole e sistemi di raffreddamento dei processori
 - una sala di ascolto con una geometria simmetrica rispetto alla sala di ascolto, per semplicità suddivisa in due aree: *sud* ovvero di fronte all’ascoltatore e *nord* ovvero di spalle all’ascoltatore.
-la parte video è limitata ad un singolo videoproiettore facilmente sostituibile con un monitor video (anzi meglio, per limitare rumori di fondo)
+la parte video è limitata ad un singolo videoproiettore o un monitor video.
 
 ## Vst host
 
