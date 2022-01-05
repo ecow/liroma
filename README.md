@@ -2,6 +2,8 @@
 
 MY-FI LIstening ROom Modelized by Auralization and other digital processing
 
+![a wonderful listening room](images/liroma.png)
+
 
 > **CALL FOR ACTION: please help me with english translation**
 
