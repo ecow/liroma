@@ -15,26 +15,25 @@ Il sistema vuole essere in grado di riprodurre l'immagine sonora (i.e. il "palco
 
 ## Razionale
 
-Per un musicista, soprattutto nella musica POP, è ormai cosa normale registrare le proprie parti utilizzando una strumentazione virtuale, ottenuta attraverso la modellazione matematica di strumenti esistenti, più o meno antichi e/o iconici. I tecnici del suono da molti anni registrano gli eventi utilizzando compressori, equalizzatori ed effetti sintetici, cioè attraverso  algoritmi digitali racchiusi in plugin in grado di simulare virtualmente il comportamento di apparati fisici di difficile reperimento o molto costosi.
-Ad esempio il riverbero che ascoltiamo in moltissime registrazioni non è reale: è solo una simulazione di quello che naturalmente si produce in spazi chiusi come cattedrali, teatri, studi di registrazione, jazz club. La impronta sonora dell’ambiente o dell'apparato viene catturato in una funzione matematica, l'*impulso*, che poi viene composto (*convoluto*) al segnale di partenza per ottenere il risultato desiderato. Grazie alla potenza degli attuali processori e allo sviluppo di algoritmi numerici particolarmente efficienti.
+Per un musicista, soprattutto nella musica POP, è ormai cosa normale registrare le proprie parti utilizzando una strumentazione virtuale, ottenuta attraverso la modellazione matematica di strumenti esistenti, più o meno antichi e/o iconici. I tecnici del suono, da molti anni, utilizzano compressori, equalizzatori ed effetti virtuali, cioè algoritmi digitali racchiusi in plugin in grado di simulare il comportamento di apparati fisici di difficile reperimento o molto costosi.
+Ad esempio, il riverbero che ascoltiamo in moltissime registrazioni non è quasi mai reale: è solo una simulazione di quello che naturalmente si produce in spazi chiusi come cattedrali, teatri, studi di registrazione, jazz club. La impronta sonora dell’ambiente viene catturato in una funzione matematica, l'*impulso*, che poi viene composto (*convoluto*) al segnale di partenza per ottenere il risultato desiderato.
 
-Il [prof. Angelo Farina](https://personale.unipr.it/it/ugovdocenti/person/18339) dell' Università di Parma si è spinto oltre, utilizzando gli strumenti della convoluzione per predire e ascoltare l'acustica di teatri e sale da concerto *prima* di che vengano costruite.
-Ciò è possibile attraverso un processo chiamato [auralizazione](https://en.m.wikipedia.org/wiki/Auralization) che tratta segnali audio registrati in ambienti aneacoidi e li trasforma in *audio immersivo* per un ascolto binaurale con normali cuffie come ben descritto in [questo articolo](http://pcfarina.eng.unipr.it/Public/Papers/119-Ciarm98.PDF).  È anche possibile sperimentare l'audio immersivo grazie ad una rete di altoparlanti indipendenti e coordinati a loro volta da sofisticati algoritmi di rendering audio basati sulle tecnologie [ambisonics](https://en.m.wikipedia.org/wiki/Ambisonics) o [SPS](http://www.angelofarina.it/sps-conversion.htm)
+Il [prof. Angelo Farina](https://personale.unipr.it/it/ugovdocenti/person/18339) dell' Università di Parma si è spinto oltre, utilizzando la convoluzione e gli impulsi per predire e ascoltare l'acustica di teatri e sale da concerto *prima* di che vengano costruite.
+Ciò è possibile attraverso un processo chiamato [auralizazione](https://en.m.wikipedia.org/wiki/Auralization) che convolve segnali audio registrati in ambienti aneacoidi con un modello acustico del teatro sviluppato da opportuni software, e li trasforma in *audio immersivo* per un ascolto binaurale con normali cuffie come ben descritto in [questo articolo](http://pcfarina.eng.unipr.it/Public/Papers/119-Ciarm98.PDF).  È anche possibile sperimentare l'audio immersivo grazie ad una rete di altoparlanti indipendenti e coordinati a loro volta da sofisticati algoritmi di rendering audio basati sulle tecnologie [ambisonics](https://en.m.wikipedia.org/wiki/Ambisonics) o [SPS](http://www.angelofarina.it/sps-conversion.htm)
 
 > *[Nota su audio immersivo]*
 > 
-> Molti già conoscono l'audio immersivo per averlo sperimentato al cinema nelle colonne sonore dei film o anche a casa propria grazie alle tracce multicanale Dolby Digital e DTS, oggi presenti anche in molti servizi di streaming. L'ascolto di tali tracce richiede una configurazione fissa di altoparlanti, che vanno  posizionati in una geometria ben definita per ottenere i risultati spaziali previsti dal regista.  Stanno prendendo sempre più piede formati di audio streaming basati su audio spaziale (Dolby Atmos, 8D) che però principalmente sono proposti per un ascolto in cuffia. 
->
+> Molti già conoscono l'audio immersivo per averlo ascoltato al cinema o anche a casa propria grazie alle tracce multicanale Dolby Digital e DTS, oggi presenti anche in molti servizi di streaming. L'ascolto di tali tracce richiede una configurazione fissa di altoparlanti, che vanno  posizionati in una geometria ben definita per ottenere i risultati spaziali previsti dal regista.  Stanno prendendo sempre più piede formati di audio streaming basati su audio spaziale e pensati per un ascolto in cuffia
+ 
 > *[Nota su riproduzione sonora HI-FI]*
 > 
-> Il mondo della riproduzione sonora domestica rimanda immediatamente al concetto di Alta Fedeltà (HI-FI) che ha avuto il suo boom a partire dagli anni 70 con la produzione di innumerevoli apparati audio/video, alcuni dei quali sono diventati oggetto dei desideri di generazioni di *audiofili* e collezionisti. A onor del vero, nel modo HI-FI il concetto di audio multicanale è spesso declinato nella sola stereofonia anche se esistono esperimenti notevoli in ambito quadrifonico, 3 canali e l’utilizzo HI-FI di di configurazioni di derivazione cinematografica ( super audio cd, DVD audio, BluRay Audio, Dolby ATMOS)  per formati solo audio.
-> 
+> Il mondo della riproduzione sonora domestica rimanda immediatamente al concetto di Alta Fedeltà (HI-FI) che ha avuto il suo boom a partire dagli anni 70 con la produzione di innumerevoli apparati audio/video, alcuni dei quali sono diventati oggetto dei desideri di generazioni di *audiofili* e collezionisti. A onor del vero, nel modo HI-FI il concetto di audio multicanale è spesso declinato nella sola stereofonia anche se esistono esperimenti notevoli in ambito quadrifonico, 3 canali e l’utilizzo HI-FI di di configurazioni di derivazione cinematografica (super audio cd, DVD audio, BluRay Audio, Dolby ATMOS)  per formati solo audio. 
 
-La estrema soggettività sul giudizio estetico relativo ad una riproduzione sonora ha, più recentemente, fatto emergere la nozione di [MY-FI](https://www.afdigitale.it/my-fi-audio-una-necessaria-e-logica-personalizzazione/) che prende atto dell'impossibilità di avere un *impianto perfetto* ovvero ben suonante in qualsiasi ambiente e su qualsiasi genere musicale. Infatti anche l'ascolto del segnale "così come registrato" in uno studio di produzione, importante per un tecnico al fine di scoprire ed eliminare eventuali difetti nella registrazione, molto spesso non risulta soddisfacente da un punto di vista meramente edonistico; spesso infatti molti audiofili etichettano tale suono come affaticante, freddo, eccessivamente dettagliato, etc.,etc. 
+La estrema soggettività sul giudizio estetico relativo ad una riproduzione sonora ha, più recentemente, fatto emergere la nozione di [MY-FI](https://www.afdigitale.it/my-fi-audio-una-necessaria-e-logica-personalizzazione/) che prende atto dell'impossibilità di avere un *impianto perfetto* ovvero ben suonante in qualsiasi ambiente e su qualsiasi genere musicale. Infatti anche l'ascolto del segnale "così come registrato" in uno studio di produzione, molto spesso non risulta soddisfacente da un punto di vista meramente edonistico; spesso infatti molti audiofili etichettano tale suono come affaticante, freddo, eccessivamente dettagliato, etc.,etc. 
 
 Di fatto il mercato degli apparati per la riproduzione audio di qualità è suddiviso in due grandi segmenti: *PRO* e *HI-FI*. IMVHO, il primo si rivolge a chi cerca la massima fedeltà al segnale registrato  (che spesso è ben altra cosa rispetto alla fedeltà rispetto all'evento sonoro originale a causa di innumerevoli rilavorazioni in sede di editing e post-produzione), il secondo a chi predilige la piacevolezza di ascolto o una evocazione emotiva dell'evento originario (che molto spesso nessuno, per le ragioni di cui sopra, ha mai davvero potuto ascoltare).
 
-Oggi esistono [standard](https://www.aes.org/e-lib/browse.cfm?elib=4782) per una sala di ascolto "pro", in virtù dell'esistenza di un riferimento ultimo oggettivo mirato alla riduzione di qualsivoglia colorazione del segnale originale (ovvero il "master" ), ma non esistono standard per un ascolto di tipo *HI-FI* in cui alcune colorazioni sono addirittura ricercate: si pensi al suono prodotto dalla naturale saturazione delle valvole. Occorre anche dire che, anche  in assenza di standard, alcune esperienze di ascolto HI-FI sono riconosciute appaganti, se non universalmente almeno a grande maggioranza; ad esempio sono pochi quelli che non si emozionano ascoltando la voce di Louis Armstrong su una coppia di vecchie casse elettrostatiche. Peccato però che lo stesso impianto, alle prese con una moderna registrazione di musica elettronica risulti del tutto inadeguato a riprodurre la necessaria pressione sonora. Situazione inversa se si prendono in considerazione impianti di alta qualità basati su diffusori a tromba ad alta efficienza.
+Oggi esistono [standard](https://www.aes.org/e-lib/browse.cfm?elib=4782) per una sala di ascolto "pro", in virtù dell'esistenza di un riferimento ultimo oggettivo mirato alla riduzione di qualsivoglia colorazione del segnale originale (ovvero il "master" ), ma non esistono standard per un ascolto di tipo *HI-FI* in cui alcune colorazioni sono addirittura volute: si pensi al suono prodotto dalla naturale saturazione delle valvole. Occorre anche dire che, anche  in assenza di standard, alcune esperienze di ascolto HI-FI sono riconosciute appaganti, se non universalmente almeno a grande maggioranza; ad esempio sono pochi quelli che non si emozionano ascoltando la voce di Louis Armstrong su una coppia di vecchie casse elettrostatiche. Peccato però che lo stesso impianto, alle prese con una moderna registrazione di musica elettronica risulti del tutto inadeguato a riprodurre la necessaria pressione sonora. Situazione inversa se si prendono in considerazione impianti di alta qualità basati su diffusori a tromba ad alta efficienza.
 
 In sostanza si può affermare che ogni impianto possiede una propria fisionomia risultante dalla combinazione di apparati, tipologogia della musica preferita, segnale sorgente e ambiente di ascolto inteso nella sua accezione più ampia che comprende la geometria della stanza, i materiali con cui è costruita, l'arredamento, il trattamento acustico, la collocazione degli apparati audio fino ai più minuti accessori dominio degli appassionati di *fine tuning*. 
 
@@ -42,13 +41,13 @@ In sostanza si può affermare che ogni impianto possiede una propria fisionomia 
 
 Questo progetto si propone di utilizzare le moderne tecnologie di rendering audio, le tecnologie di convoluzione e auralizzazione per realizzare una sala d'ascolto domestica in cui replicare l'esperienza emotiva che si ottiene con diverse tipologie di impianti HI-FI. Il tutto a costi limitati e permettendo di cambiare virtualmente impianto anche ad ogni brano musicale, adattandolo al proprio gusto estetico.
 
-L’idea alla base del progetto è di descrivere tramite strumenti matematici (es. impulsi):
-1. la funzione di trasferimento di sala di ascolto di riferimento in cui opera una configurazione di componenti per la riproduzione audio (*target*)
+L’idea alla base del progetto è di descrivere tramite strumenti matematici (i.e. impulsi):
+1. la funzione di trasferimento di sala di ascolto di riferimento in cui opera una configurazione di componenti per la riproduzione audio (*ambiente target*)
 2. la funzione di trasferimento della propria sala di ascolto
 
-Utilizzare poi queste funzioni per computare una trasformazione del segnale in ingresso che replichi, nel proprio ambiente domestico, l'esperienza di ascolto in una sala ottimizzata per il proprio gusto e per lo specifico brano che si sta ascoltando.
+Utilizzare poi queste funzioni per computare una trasformazione del segnale in ingresso che replichi, nel proprio ambiente domestico, l'esperienza di ascolto nell'ambiente target.
 
-L'insieme dei vincoli cui il progetto e assoggettato lo collocano nel dominio del puro entertaiment anche se, con le opportune tare,  potrebbe essere considerato un test bed per un progetto più ambizioso.
+L'insieme dei vincoli cui il progetto è assoggettato lo collocano nel dominio del puro entertaiment anche se, con le opportune tare, potrebbe essere considerato un POC per un progetto più ambizioso.
 
 Se l’obiettivo teorico fosse infatti pienamente raggiunto, semplicemente cambiando solo la prima delle funzione in ingresso, sarebbe possibile ascoltare un segnale registrato così come riprodotto da un qualsiasi impianto (pro o hi-end) senza alcuna modifica fisica al proprio sistema di riproduzione. Ad esempio ascoltare Luis Amstrong con casse elettrostatiche, o un solo di Marcus Miller con un potente sistema a trombe ma anche mixare l'audio di un filmato in formato stereo, 5.1, 7.1 e Dolby ATMOS.
 
@@ -67,7 +66,7 @@ Some well known re-mastering tecniques (linear phase equalization, multiband com
 ## Vincoli
 Nonostante il tentativo di operare in modo più possibile scientifico, è ragionevole ipotizzare che nella pratica alcune condizioni ideali assunte dalla teoria non possano essere rispettate e quindi occorra scendere a compromessi. Tali compromessi renderanno i risultati di questo progetto comunque soggettivi e difficilmente replicabili. Con questa consapevolezza accettiamo di applicare i seguenti vincoli:
 
-- la stanza di ascolto dovrà essere principalmente dedicata all'ascolto, nel senso che il suo arredamento non deve mutare sovente nel tempo, per evitare di dover ricomputare ad ogni cambiamento la sua funzione di trasferimento.
+- la stanza dovrà essere principalmente dedicata all'ascolto, nel senso che il suo arredamento non deve mutare sovente nel tempo, per evitare di dover ricomputare ad ogni cambiamento la sua funzione di trasferimento.
 - il sistema sarà ottimizzato per un unico punto di ascolto (*hot spot*), in modo non dissimile a quanto avviene oggi con un normale impianto stereo.
 - la sala di ascolto dovrà essere trattata acusticamente per limitare le onde stazionarie e le prime riflessioni, almeno nell’hot spot
 - la stanza di ascolto dovrebbe contenere da 12 a 16 casse acustiche indipendenti e almeno un sub woofer dedicato ai bassi sotto i 100Hz. L’utilizzo di uno o più sub è finalizzato a sia ridurre le dimensioni delle casse e quindi il loro costo ma anche a minimizzare i problemi con le fasi rendendo quanto più possibile le sorgenti puntiformi
@@ -83,14 +82,14 @@ Nonostante il tentativo di operare in modo più possibile scientifico, è ragion
 
 > [Nota sulla linearità ]
 > 
-> Si osservi anche che la assoluta linearità di risposta in fase e in frequenza non è un requisito, ciò perché gli algoritmi di DRC e auralizzazione permettono di correggere sia fase che risposta in frequenza se entro ragionevoli limiti; inoltre la rotazione di fase e la non linearità di risposta in frequenza sono inevitabilmente introdotte da qualsiasi ambiente di ascolto che non sia anecoico e sono peraltro le principali componenti che caratterizzano un impianto di riproduzione audio. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro* potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
+> Si osservi anche che la perfetta linearità di risposta in fase e in frequenza non è un requisito, ciò perché gli algoritmi di DRC e auralizzazione permettono di correggere sia fase che risposta in frequenza se entro ragionevoli limiti; inoltre la rotazione di fase e la non linearità di risposta in frequenza sono inevitabilmente introdotte da qualsiasi ambiente di ascolto che non sia anecoico e sono peraltro le principali componenti che caratterizzano un impianto di riproduzione audio. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro* potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
 
 I seguenti vincoli sono poi utili per semplificare la complessità ddel sistema:
 
 - le casse dovrebbero essere identiche o almeno molto simili, anche se gli algoritmi di DRC permettono  di armonizzare il suono di casse lievemente diverse
 - le casse devono essere direzionali e proiettare il suono prevalentemente frontalmente (no dipoli) per poter predire e limitare le prime riflessioni
-- il posizionamento delle casse dovrebbe essere preferibilmente simmetrico rispetto all’hot-spot rispetto all'asse nord-sud; in una situazione ottimale le casse dovrebbero essere collocate simmetricamente sulla superficie di una sfera con al centro l'hot spot. Anche in questo caso è comunque prevista nel progetto una correzione dell’allineamento temporale e di e volume di emissione per compensare eventuali piccole differenze.
-- la frequenza di campionamento per il trattamento dei segnali digitali è fissata a 48Khz con una risoluzione di 24bit al fine di limitare la potenza computazionale necessaria e per permettere di utilizzare protocolli e linee di trasmissione economiche (8 canali su una singola fibra ottica ADAT). Si osserva come comunque tale frequenza e risoluzione siano ampiamente sufficienti a realizzare i vincoli di pressione acustica e SNR richiesti. Di contro, eventuali risoluzioni più alte o più basse sul segnale in ingresso richiederanno un preventivo ricampionamento non critico grazie agli algoritmi di down-sampling oggi disponibili.
+- il posizionamento delle casse dovrebbe essere preferibilmente simmetrico rispetto all’hot-spot; in una situazione ottimale le casse dovrebbero essere collocate simmetricamente sulla superficie di una sfera con al centro l'hot spot. Anche in questo caso è comunque prevista nel progetto una correzione dell’allineamento temporale e di e volume di emissione per compensare eventuali piccole differenze.
+- la frequenza di campionamento per il trattamento dei segnali digitali è fissata a 48Khz con una risoluzione di 24bit al fine di limitare la potenza computazionale necessaria e per permettere di utilizzare linee di trasmissione economiche (8 canali su una singola fibra ottica ADAT). Si osserva come comunque tale frequenza e risoluzione siano ampiamente sufficienti a realizzare i vincoli di pressione acustica e SNR richiesti. Di contro, eventuali risoluzioni più alte o più basse sul segnale in ingresso richiederanno un preventivo ricampionamento non critico grazie agli algoritmi di down-sampling oggi disponibili.
 
 ## Requisiti funzionali
 
@@ -115,7 +114,7 @@ La seguente figura mostra una possibile configurazione logica per il deploy del 
 
 Sono previste due aree fisiche distinte:
 - un'area in cui collocare la strumentazione rumorosa, principalmente a causa di ventole e sistemi di raffreddamento dei processori
-- una sala di ascolto con una geometria simmetrica rispetto alla sala di ascolto, per semplicità suddivisa in due aree: *sud* ovvero di fronte all’ascoltatore e *nord* ovvero di spalle all’ascoltatore.
+- una sala di ascolto con una geometria simmetrica rispetto all'hot spot.
 
 ## Vst host
 
@@ -140,12 +139,12 @@ Se avete realizzato qualcosa di simile e volete condividere la vostra esperienza
 
 ## Licenza
 
-Il seguente progetto è rilasciato con licenza [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) eventuale sw sviluppato per questo progetto sarà rilasciato con licenza [MIT](LICENSE) 
+Il seguente progetto è Copyright by Enrico Fagnoni ed è rilasciato con licenza [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) il sw sviluppato specificamente per questo progetto è rilasciato con licenza [MIT](LICENSE) 
 
 
 ## References
 
-Questo progetto nasce sulle spalle di alcuni straordinari lavori, ai cui autori va la mia più grande ammirazione:
+Questo progetto nasce grazie ad alcuni straordinari lavori, ai cui autori va la mia più grande ammirazione:
 
 - Angelo Farina [ambisonic pages](http://pcfarina.eng.unipr.it/ambisonics.htm)
 - Alberto Amendola and Angelo Farina - [SPS](http://www.upv.es/contenidos/ISVA2011/info/U0568405.pdf)
