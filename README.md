@@ -82,7 +82,7 @@ Nonostante il tentativo di operare in modo più possibile scientifico, è ragion
 
 > [Nota sulla linearità ]
 > 
-> Si osservi anche che la perfetta linearità di risposta in fase e in frequenza non è un requisito, ciò perché gli algoritmi di DRC e auralizzazione permettono di correggere sia fase che risposta in frequenza se entro ragionevoli limiti; inoltre la rotazione di fase e la non linearità di risposta in frequenza sono inevitabilmente introdotte da qualsiasi ambiente di ascolto che non sia anecoico e sono peraltro le principali componenti che caratterizzano un impianto di riproduzione audio. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro* potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
+> Si osservi anche che la perfetta linearità di risposta in fase e in frequenza non è un requisito, ciò perché gli algoritmi di DRC (Digita Room Correction) e auralizzazione permettono di correggere sia fase che risposta in frequenza se entro ragionevoli limiti; inoltre la rotazione di fase e la non linearità di risposta in frequenza sono inevitabilmente introdotte da qualsiasi ambiente di ascolto che non sia anecoico e sono peraltro le principali componenti che caratterizzano una riproduzione audio. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro*, potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
 
 I seguenti vincoli sono poi utili per semplificare la complessità ddel sistema:
 
@@ -96,12 +96,12 @@ I seguenti vincoli sono poi utili per semplificare la complessità ddel sistema:
 I requisiti funzionali del sistema sono raccolti in 5 macro aree:
 
 - requisiti relativi ai **segnali in ingresso**, che evidenziano quali input sono compatibili con il sistema di riproduzione
-- i requisiti relativi al **player**, ovvero lo strumento che si occupa di decodificare i segnali di ingresso standarizzandoli e applicando eventuali trasformazioni *a grana grossa*. Trale strumento si occupa anche di visualizzare eventuali contributi video facendosi carico di compensare eventuali ritardi introdotti dalla la catena dei processori audio. La visualizzaione ottimale del video non è prioritaria in questo progetto.
-- i requisiti relativi al **Digital signal processor**, ovvero lo strumento di effettuare le trasformazioni qualitative nei segnali di ingresso (remastering) e di rendering del suono in 3D. Rappresenta il cuore del sistema ed è realizzato attraverso una *pipeline* di processori digitali
+- i requisiti relativi al **player**, ovvero lo strumento che si occupa di decodificare i segnali di ingresso standarizzandoli e applicando eventuali trasformazioni *a grana grossa*. Tale strumento si occupa anche di visualizzare eventuali video facendosi carico di compensare eventuali ritardi introdotti dalla la catena dei processori audio. La visualizzaione ottimale del video non è prioritaria in questo progetto.
+- i requisiti relativi al **Digital signal processor**, ovvero lo strumento di effettuare le trasformazioni qualitative nei segnali di ingresso (remastering) e di rendering del suono in 3D. Rappresenta il cuore del sistema ed è realizzato attraverso una *pipeline* di processori audio digitali
 - i requisiti funzionali relativi alla configurazione della **sala di ascolto**
 - i requisiti relativi alle **applicazioni di controllo** tramite cui l’ascoltatore può interagire con il sistema (scelta brani, set-up volume, cambio configurazione di ascolto) tipicamente attraverso un tablet o un normale smartphone 
 
-I principalu requisiti funzionali sono raccolti nel seguente diagramma:
+I principali requisiti funzionali sono raccolti nel seguente diagramma:
 
 ![functional view](images/functional-view.png)
 
