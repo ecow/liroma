@@ -8,13 +8,12 @@ MY-FI LIstening ROom Modelized by Auralization and other digital processing
 > **CALL FOR ACTION: please help me with english translation**
 
 ## Abstract
-
 Questo progetto si propone di utilizzare le tecnologie di spazializzazione dei segnali audio, le tecnologie di convoluzione e auralizzazione per realizzare una sala d'ascolto immersiva a relativo  basso costo in cui replicare l'esperienza emotiva che si ottiene con diverse tipologie e configurazioni di impianti HI-FI. 
 
 Il sistema vuole essere in grado di riprodurre l'immagine sonora (i.e. il "palcoscenico") e la timbrica desiderate partendo da una qualsiasi sorgente audio digitale, indipendentemente dalla sua codifica, formato, risoluzione e dal suo numero di canali.
 
-## Razionale
 
+## Razionale
 Per un musicista, soprattutto nella musica POP, è ormai cosa normale registrare le proprie parti utilizzando una strumentazione virtuale, ottenuta attraverso la modellazione matematica di strumenti esistenti, più o meno antichi e/o iconici. I tecnici del suono, da molti anni, utilizzano compressori, equalizzatori ed effetti virtuali, cioè algoritmi digitali racchiusi in plugin in grado di simulare il comportamento di apparati fisici di difficile reperimento o molto costosi.
 Ad esempio, il riverbero che ascoltiamo in moltissime registrazioni non è quasi mai reale: è solo una simulazione di quello che naturalmente si produce in spazi chiusi come cattedrali, teatri, studi di registrazione, jazz club. La impronta sonora dell’ambiente viene catturato in una funzione matematica, l'*impulso*, che poi viene composto (*convoluto*) al segnale di partenza per ottenere il risultato desiderato.
 
@@ -37,8 +36,8 @@ Oggi esistono [standard](https://www.aes.org/e-lib/browse.cfm?elib=4782) per una
 
 In sostanza si può affermare che ogni impianto possiede una propria fisionomia risultante dalla combinazione di apparati, tipologogia della musica preferita, segnale sorgente e ambiente di ascolto inteso nella sua accezione più ampia che comprende la geometria della stanza, i materiali con cui è costruita, l'arredamento, il trattamento acustico, la collocazione degli apparati audio fino ai più minuti accessori dominio degli appassionati di *fine tuning*. 
 
-## Obiettivo del progetto
 
+## Obiettivo del progetto
 Questo progetto si propone di utilizzare le moderne tecnologie di rendering audio, le tecnologie di convoluzione e auralizzazione per realizzare una sala d'ascolto domestica in cui replicare l'esperienza emotiva che si ottiene con diverse tipologie di impianti HI-FI. Il tutto a costi limitati e permettendo di cambiare virtualmente impianto anche ad ogni brano musicale, adattandolo al proprio gusto estetico.
 
 L’idea alla base del progetto è di descrivere tramite strumenti matematici (i.e. impulsi):
@@ -53,15 +52,14 @@ Se l’obiettivo teorico fosse infatti pienamente raggiunto, semplicemente cambi
 
 
 ## How it works
-
 well... how it *COULD* work is simplified in this wokflow:
-
 
 ![how it woks](images/how-it-works.png)
 
 the main open point is how to capture the footprint of the target HI-FI system. In a first step a *trial and error* approach can be used.
 
 Some well known re-mastering tecniques (linear phase equalization, multiband compressions, reverberation, etc. etc.) can be also applied in real time to the source signal according your personal taste.
+
 
 ## Vincoli
 Nonostante il tentativo di operare in modo più possibile scientifico, è ragionevole ipotizzare che nella pratica alcune condizioni ideali assunte dalla teoria non possano essere rispettate e quindi occorra scendere a compromessi. Tali compromessi renderanno i risultati di questo progetto comunque soggettivi e difficilmente replicabili. Con questa consapevolezza accettiamo di applicare i seguenti vincoli:
@@ -81,20 +79,18 @@ Nonostante il tentativo di operare in modo più possibile scientifico, è ragion
 > Il progetto prevede un range dinamico utile di circa 80dB, pari a poco più di 13 bit e quindi parecchio inferiore al limite teorico di 96dB risultanti dalle specifiche di un CD, ma comunque molto superiore alla reale risoluzione nella quasi totalità delle registrazioni commerciali (vedi [loudness war db](https://dr.loudness-war.info/)). Ad aggiungere rumore si fa sempre in tempo, e [può essere conveniente farlo](https://www.musicradar.com/tuition/tech/10-ways-to-use-noise-to-enhance-your-mixes-633348) perché anche il rumore di fondo concorre alla fisionomia di un impianto e comunque la dinamica percepita non sempre coincide con quella teorica (come nel caso degli LP ad esempio). D'altronde il dithering è prassi consolidata, se non obbligatoria, anche nei processi di mastering.
 
 > [Nota sulla linearità ]
-> 
+>  
 > Si osservi anche che la perfetta linearità di risposta in fase e in frequenza non è un requisito, ciò perché gli algoritmi di DRC (Digita Room Correction) e auralizzazione permettono di correggere sia fase che risposta in frequenza se entro ragionevoli limiti; inoltre la rotazione di fase e la non linearità di risposta in frequenza sono inevitabilmente introdotte da qualsiasi ambiente di ascolto che non sia anecoico e sono peraltro le principali componenti che caratterizzano una riproduzione audio. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro*, potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
 
 I seguenti vincoli sono poi utili per semplificare la complessità ddel sistema:
 
-- le casse dovrebbero essere identiche o almeno molto simili, anche se gli algoritmi di DRC permettono  di armonizzare il suono di casse lievemente diverse
 - le casse devono essere direzionali e proiettare il suono prevalentemente frontalmente (no dipoli) per poter predire e limitare le prime riflessioni
 - il posizionamento delle casse dovrebbe essere preferibilmente simmetrico rispetto all’hot-spot; in una situazione ottimale le casse dovrebbero essere collocate simmetricamente sulla superficie di una sfera con al centro l'hot spot. Anche in questo caso è comunque prevista nel progetto una correzione dell’allineamento temporale e di e volume di emissione per compensare eventuali piccole differenze.
-- la frequenza di campionamento per il trattamento dei segnali digitali è fissata a 48Khz con una risoluzione di 24bit al fine di limitare la potenza computazionale necessaria e per permettere di utilizzare linee di trasmissione economiche (8 canali su una singola fibra ottica ADAT). Si osserva come comunque tale frequenza e risoluzione siano ampiamente sufficienti a realizzare i vincoli di pressione acustica e SNR richiesti. Di contro, eventuali risoluzioni più alte o più basse sul segnale in ingresso richiederanno un preventivo ricampionamento non critico grazie agli algoritmi di down-sampling oggi disponibili.
+- la frequenza di campionamento per il trattamento dei segnali digitali è fissata a 44.1Khz con una risoluzione di 24bit al fine di limitare la potenza computazionale necessaria e per permettere di utilizzare linee di trasmissione economiche (8 canali su una singola fibra ottica ADAT). Si osserva come comunque tale frequenza e risoluzione siano ampiamente sufficienti a realizzare i vincoli di pressione acustica e SNR richiesti. Di contro, eventuali risoluzioni più alte o più basse sul segnale in ingresso richiederanno un preventivo ricampionamento non critico grazie agli algoritmi di down-sampling oggi disponibili.
+
 
 ## Requisiti funzionali
-
 I requisiti funzionali del sistema sono raccolti in 5 macro aree:
-
 - requisiti relativi ai **segnali in ingresso**, che evidenziano quali input sono compatibili con il sistema di riproduzione
 - i requisiti relativi al **player**, ovvero lo strumento che si occupa di decodificare i segnali di ingresso standarizzandoli e applicando eventuali trasformazioni *a grana grossa*. Tale strumento si occupa anche di visualizzare eventuali video facendosi carico di compensare eventuali ritardi introdotti dalla la catena dei processori audio. La visualizzaione ottimale del video non è prioritaria in questo progetto.
 - i requisiti relativi al **Digital signal processor**, ovvero lo strumento di effettuare le trasformazioni qualitative nei segnali di ingresso (remastering) e di rendering del suono in 3D. Rappresenta il cuore del sistema ed è realizzato attraverso una *pipeline* di processori audio digitali
@@ -107,7 +103,6 @@ I principali requisiti funzionali sono raccolti nel seguente diagramma:
 
 
 ## Deploy example
-
 La seguente figura mostra una possibile configurazione logica per il deploy del progetto:
 
 ![deploy view](images/deploy-view.png)
@@ -116,8 +111,8 @@ Sono previste due aree fisiche distinte:
 - un'area in cui collocare la strumentazione rumorosa, principalmente a causa di ventole e sistemi di raffreddamento dei processori
 - una sala di ascolto con una geometria simmetrica rispetto all'hot spot.
 
-## Vst host
 
+## Vst host
 Il cuore del sistema è senza dubbio la catena di processori digitali. L’ipotesi attuale in questo progetto (a sono graditi consigli e alternative) è di usare un VST host e una serie di plugin VST, a parità di qualità sono da preferire plugin con codice open source.
 
 La pipeline di plugin prevista è sintetizzata nella seguente figura:
@@ -138,31 +133,33 @@ Se avete realizzato qualcosa di simile e volete condividere la vostra esperienza
 
 ## Road map
 Il progetto si articola in tre fasi
-1) [setup listening room](https://trello.com/b/iI8N1AVq/liroma) 
- - basic acoustic treatment
- - up mix and default virtual lissening environments
- - test speaker types and  placement
- - full 7.1 support with 6 extra front speaker for spatial reinforment (just volume control)
- - no auralization
+1) [setup listening room](https://trello.com/b/iI8N1AVq/liroma)
+    - [room layout design](images/phase1-room-design.png)
+    - basic acoustic treatment
+    - up mix and default virtual lissening environments
+    - test speaker types and placement tuning
+    - full 7.1 support with 6 extra front speaker for spatial reinforment (just volume control)
+    - basic bass management
+    - no auralization
 2) Digital room optimization
- - speacker upgrade
- - 14.2 support,
- - DRC
- - Bass management
+    - speakers upgrade
+    - 14.2 support,
+    - temporal alignement
+    - DRC
+    - Bass management
+    - loudness calibration (K20, K15, K10)
 3) Auralization
- - Dolby Atmos support
- - Ambisonic support
- - Virtual speaker signature experiments
+    - Dolby Atmos support
+    - ambisonic support
+    - experiment the virtual speakers emulation 
+
 
 ## Licenza
-
 Il seguente progetto è Copyright by Enrico Fagnoni ed è rilasciato con licenza [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) il sw sviluppato specificamente per questo progetto è rilasciato con licenza [MIT](LICENSE) 
 
 
 ## References
-
 Questo progetto nasce grazie ad alcuni straordinari lavori, ai cui autori va la mia più grande ammirazione:
-
 - Angelo Farina [ambisonic pages](http://pcfarina.eng.unipr.it/ambisonics.htm)
 - Alberto Amendola and Angelo Farina - [SPS](http://www.upv.es/contenidos/ISVA2011/info/U0568405.pdf)
 - Michael Vorländer - [Auralization: Fundamentals of Acoustics, Modelling, Simulation, Algorithms and Acoustic Virtual Reality](https://www.amazon.it/Auralization-Fundamentals-Acoustics-Simulation-Algorithms/dp/3642080235)
