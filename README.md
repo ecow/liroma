@@ -136,22 +136,22 @@ Il progetto si articola in tre fasi
 1) [setup listening room](https://trello.com/b/iI8N1AVq/liroma)
     - [room layout design](images/phase1-room-design.png)
     - basic acoustic treatment
-    - up mix and default virtual lissening environments
+    - up mix and default virtual listening environments
     - test speaker types and placement tuning
-    - full 7.1 support with 6 extra front speaker for spatial reinforment (just volume control)
+    - full 7.1 support with 6 extra front speakers + 2 side speakers + 1 extra sub for spatial reinforcement (just volume control)
     - basic bass management
     - no auralization
 2) Digital room optimization
     - speakers upgrade
-    - 14.2 support,
-    - temporal alignement
+    - 15.2 channels support,
+    - temporal alignment
     - DRC
     - Bass management
     - loudness calibration (K20, K15, K10)
 3) Auralization
     - Dolby Atmos support
     - ambisonic support
-    - experiment the virtual speakers emulation 
+    - experiment the virtual speakers' emulation 
 
 
 ## Licenza
