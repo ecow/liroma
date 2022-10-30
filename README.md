@@ -136,6 +136,23 @@ Ovviamente vi prego di segnalare ogni errore, omissione, richiesta di estensione
 
 Se avete realizzato qualcosa di simile e volete condividere la vostra esperienza segnalatemelo e provvedeò ad inserirlo in una sezione di questo progetto.
 
+## Road map
+Il progetto si articola in tre fasi
+1) [setup listening room](https://trello.com/b/iI8N1AVq/liroma) 
+ - basic acoustic treatment
+ - up mix and default virtual lissening environments
+ - test speaker types and  placement
+ - full 7.1 support with 6 extra front speaker for spatial reinforment (just volume control)
+ - no auralization
+2) Digital room optimization
+ - speacker upgrade
+ - 14.2 support,
+ - DRC
+ - Bass management
+3) Auralization
+ - Dolby Atmos support
+ - Ambisonic support
+ - Virtual speaker signature experiments
 
 ## Licenza
 
