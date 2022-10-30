@@ -134,7 +134,7 @@ Se avete realizzato qualcosa di simile e volete condividere la vostra esperienza
 ## Road map
 Il progetto si articola in tre fasi
 1) [setup listening room](https://trello.com/b/iI8N1AVq/liroma)
-    - [room layout design](images/phase1-room-design.png)
+    - [room layout design](images/phase1-room-layout.png)
     - basic acoustic treatment
     - up mix and default virtual listening environments
     - test speaker types and placement tuning
