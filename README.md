@@ -5,161 +5,125 @@ MY-FI LIstening ROom Modelized by Auralization and other digital processing
 ![a wonderful listening room](images/liroma.png)
 
 
-> **CALL FOR ACTION: please help me with english translation**
-
 ## Abstract
-Questo progetto si propone di utilizzare le tecnologie di spazializzazione dei segnali audio, le tecnologie di convoluzione e auralizzazione per realizzare una sala d'ascolto immersiva a relativo  basso costo in cui replicare l'esperienza emotiva che si ottiene con diverse tipologie e configurazioni di impianti HI-FI. 
+This project aims to utilize audio signal spatialization technologies, convolution, and auralization to create an immersive listening room.
 
-Il sistema vuole essere in grado di riprodurre l'immagine sonora (i.e. il "palcoscenico") e la timbrica desiderate partendo da una qualsiasi sorgente audio digitale, indipendentemente dalla sua codifica, formato, risoluzione e dal suo numero di canali.
-
-
-## Razionale
-Per un musicista, soprattutto nella musica POP, è ormai cosa normale registrare le proprie parti utilizzando una strumentazione virtuale, ottenuta attraverso la modellazione matematica di strumenti esistenti, più o meno antichi e/o iconici. I tecnici del suono, da molti anni, utilizzano compressori, equalizzatori ed effetti virtuali, cioè algoritmi digitali racchiusi in plugin in grado di simulare il comportamento di apparati fisici di difficile reperimento o molto costosi.
-Ad esempio, il riverbero che ascoltiamo in moltissime registrazioni non è quasi mai reale: è solo una simulazione di quello che naturalmente si produce in spazi chiusi come cattedrali, teatri, studi di registrazione, jazz club. La impronta sonora dell’ambiente viene catturato in una funzione matematica, l'*impulso*, che poi viene composto (*convoluto*) al segnale di partenza per ottenere il risultato desiderato.
-
-Il [prof. Angelo Farina](https://personale.unipr.it/it/ugovdocenti/person/18339) dell' Università di Parma si è spinto oltre, utilizzando la convoluzione e gli impulsi per predire e ascoltare l'acustica di teatri e sale da concerto *prima* di che vengano costruite.
-Ciò è possibile attraverso un processo chiamato [auralizazione](https://en.m.wikipedia.org/wiki/Auralization) che convolve segnali audio registrati in ambienti anecoidi con un modello acustico del teatro sviluppato da opportuni software, e li trasforma in *audio immersivo* per un ascolto binaurale con normali cuffie come ben descritto in [questo articolo](http://pcfarina.eng.unipr.it/Public/Papers/119-Ciarm98.PDF).  È anche possibile sperimentare l'audio immersivo grazie ad una rete di altoparlanti indipendenti e coordinati a loro volta da sofisticati algoritmi di rendering audio basati sulle tecnologie [ambisonics](https://en.m.wikipedia.org/wiki/Ambisonics) o [SPS](http://www.angelofarina.it/sps-conversion.htm)
-
-> *[Nota su audio immersivo]*
-> 
-> Molti già conoscono l'audio immersivo per averlo ascoltato al cinema o anche a casa propria grazie alle tracce multicanale Dolby Digital e DTS, oggi presenti anche in molti servizi di streaming. L'ascolto di tali tracce richiede una configurazione fissa di altoparlanti, che vanno  posizionati in una geometria ben definita per ottenere i risultati spaziali previsti dal regista.  Stanno prendendo sempre più piede formati di audio streaming basati su audio spaziale e pensati per un ascolto in cuffia
- 
-> *[Nota su riproduzione sonora HI-FI]*
-> 
-> Il mondo della riproduzione sonora domestica rimanda immediatamente al concetto di Alta Fedeltà (HI-FI) che ha avuto il suo boom a partire dagli anni 70 con la produzione di innumerevoli apparati audio/video, alcuni dei quali sono diventati oggetto dei desideri di generazioni di *audiofili* e collezionisti. A onor del vero, nel modo HI-FI il concetto di audio multicanale è spesso declinato nella sola stereofonia anche se esistono esperimenti notevoli in ambito quadrifonico, 3 canali e l’utilizzo HI-FI di di configurazioni di derivazione cinematografica (super audio cd, DVD audio, BluRay Audio, Dolby ATMOS)  per formati solo audio. 
-
-La estrema soggettività sul giudizio estetico relativo ad una riproduzione sonora ha, più recentemente, fatto emergere la nozione di [MY-FI](https://www.afdigitale.it/my-fi-audio-una-necessaria-e-logica-personalizzazione/) che prende atto dell'impossibilità di avere un *impianto perfetto* ovvero ben suonante in qualsiasi ambiente e su qualsiasi genere musicale. Infatti anche l'ascolto del segnale "così come registrato" in uno studio di produzione, molto spesso non risulta soddisfacente da un punto di vista meramente edonistico; spesso infatti molti audiofili etichettano tale suono come affaticante, freddo, eccessivamente dettagliato, etc.,etc. 
-
-Di fatto il mercato degli apparati per la riproduzione audio di qualità è suddiviso in due grandi segmenti: *PRO* e *HI-FI*. IMVHO, il primo si rivolge a chi cerca la massima fedeltà al segnale registrato  (che spesso è ben altra cosa rispetto alla fedeltà rispetto all'evento sonoro originale a causa di innumerevoli rilavorazioni in sede di editing e post-produzione), il secondo a chi predilige la piacevolezza di ascolto o una evocazione emotiva dell'evento originario (che molto spesso nessuno, per le ragioni di cui sopra, ha mai davvero potuto ascoltare).
-
-Oggi esistono [standard](https://www.aes.org/e-lib/browse.cfm?elib=4782) per una sala di ascolto "pro", ovvero le control-room,  in virtù dell'esistenza di un riferimento ultimo oggettivo mirato alla riduzione di qualsivoglia colorazione del segnale originale (ovvero il "master" ), ma non esistono standard per un ascolto di tipo *HI-FI* in cui alcune colorazioni sono addirittura volute: si pensi al suono prodotto dalla naturale saturazione delle valvole. Occorre anche dire che, anche  in assenza di standard, alcune esperienze di ascolto HI-FI sono riconosciute appaganti, se non universalmente almeno a grande maggioranza; ad esempio sono pochi quelli che non si emozionano ascoltando la voce di Louis Armstrong su una coppia di vecchie casse elettrostatiche. Peccato però che lo stesso impianto, alle prese con una moderna registrazione di musica elettronica risulti del tutto inadeguato a riprodurre la necessaria pressione sonora. Situazione inversa se si prendono in considerazione impianti di alta qualità basati su diffusori a tromba ad alta efficienza.
-
-In sostanza si può affermare che ogni impianto possiede una propria fisionomia risultante dalla combinazione di apparati, tipologogia della musica preferita, segnale sorgente e ambiente di ascolto inteso nella sua accezione più ampia che comprende la geometria della stanza, i materiali con cui è costruita, l'arredamento, il trattamento acustico, la collocazione degli apparati audio fino ai più minuti accessori dominio degli appassionati di *fine tuning*. 
+The designed system intends to reproduce the desired environment and timbre from any digital audio source, regardless of its encoding, format, resolution, or the number of its channels.
 
 
-## Obiettivo del progetto
-Questo progetto si propone di utilizzare le moderne tecnologie di rendering audio, le tecnologie di convoluzione e auralizzazione per realizzare una sala d'ascolto domestica in cui replicare l'esperienza emotiva che si ottiene con diverse tipologie di impianti HI-FI. Il tutto a costi limitati e permettendo di cambiare virtualmente impianto anche ad ogni brano musicale, adattandolo al proprio gusto estetico.
+## Rationale
+For a musician, especially in the realm of POP music, it has become commonplace to record their parts using virtual instruments obtained through mathematical modeling of existing instruments, whether they be old and/or iconic. Sound engineers have been using virtual compressors, equalizers, and effects for many years—digital algorithms enclosed in plugins capable of simulating the behavior of physically hard-to-find or expensive equipment.
 
-L’idea alla base del progetto è di descrivere tramite strumenti matematici (i.e. impulsi):
-1. la funzione di trasferimento di sala di ascolto di riferimento in cui opera una configurazione di componenti per la riproduzione audio (*ambiente target*)
-2. la funzione di trasferimento della propria sala di ascolto
+For instance, the reverb we hear in numerous recordings is rarely real; it is merely a simulation of what naturally occurs in enclosed spaces like cathedrals, theaters, recording studios, or jazz clubs. The sonic impression of the environment is captured in a mathematical function—the *impulse*—which is then combined (*convolved*) with the original signal to achieve the desired result.
 
-Utilizzare poi queste funzioni per computare una trasformazione del segnale in ingresso che replichi, nel proprio ambiente domestico, l'esperienza di ascolto nell'ambiente target.
+[Professor Angelo Farina](https://personale.unipr.it/it/ugovdocenti/person/18339) from the University of Parma has gone a step further by using convolution and impulses to predict and listen to the acoustics of theaters and concert halls *before* they are constructed. This is made possible through a process called [auralization](https://en.m.wikipedia.org/wiki/Auralization), which convolves audio signals recorded in anechoic environments with an acoustic model of the theater developed by specific software, and transforms them into *immersive audio* for binaural listening using regular headphones, as well-described in [this article](http://pcfarina.eng.unipr.it/Public/Papers/119-Ciarm98.PDF). It is also possible to experience immersive audio using a network of independent speakers coordinated by sophisticated audio rendering algorithms based on technologies such as [ambisonics](https://en.m.wikipedia.org/wiki/Ambisonics) or [SPS](http://www.angelofarina.it/sps-conversion.htm). 
 
-L'insieme dei vincoli cui il progetto è assoggettato lo collocano nel dominio del puro entertaiment anche se, con le opportune tare, potrebbe essere considerato un POC per un progetto più ambizioso.
+Currently, there are [standards](https://www.aes.org/e-lib/browse.cfm?elib=4782) for "pro" listening rooms, specifically control and mastering rooms designed for multichannel productions.
+From the consumer point of view, the extreme subjectivity regarding aesthetic judgment of sound reproduction has recently given rise to the notion of [MY-FI](https://www.afdigitale.it/my-fi-audio-una-necessaria-e-logica-personalizzazione/), acknowledging the impossibility of having a *perfect system* that sounds excellent in any environment and with any music genre. In fact, even listening to the signal in a production studio often does not satisfy purely hedonistic points of view; indeed, many audiophiles describe such sound as fatiguing, cold, excessively detailed, and so on.
 
-Se l’obiettivo teorico fosse infatti pienamente raggiunto, semplicemente cambiando solo la prima delle funzione in ingresso, sarebbe possibile ascoltare un segnale registrato così come riprodotto da un qualsiasi impianto (pro o hi-end) senza alcuna modifica fisica al proprio sistema di riproduzione. Ad esempio ascoltare Luis Amstrong con casse elettrostatiche, o un solo di Marcus Miller con un potente sistema a trombe ma anche mixare l'audio di un filmato in formato stereo, 5.1, 7.1 e Dolby ATMOS.
-
-
-## How it works
-well... how it *COULD* work is simplified in this wokflow:
-
-![how it woks](images/how-it-works.png)
-
-the main open point is how to capture the footprint of the target HI-FI system. In a first step a *trial and error* approach can be used.
-
-Some well known re-mastering tecniques (linear phase equalization, multiband compressions, reverberation, etc. etc.) can be also applied in real time to the source signal according your personal taste.
+In essence, it can be affirmed that each audio system possesses its own distinctive qualitative characteristics resulting from the combination of equipment, preferred music genre, source signal, and listening environment. The latter is understood in its broadest sense, encompassing the room's geometry, construction materials, furnishings, acoustic treatment, placement of audio equipment, and even the most minute accessories, which are the domain of *fine-tuning* enthusiasts.
 
 
-## Vincoli
-Nonostante il tentativo di operare in modo più possibile scientifico, è ragionevole ipotizzare che nella pratica alcune condizioni ideali assunte dalla teoria non possano essere rispettate e quindi occorra scendere a compromessi. Tali compromessi renderanno i risultati di questo progetto comunque soggettivi e difficilmente replicabili. Con questa consapevolezza accettiamo di applicare i seguenti vincoli:
 
-- la stanza dovrà essere principalmente dedicata all'ascolto, nel senso che il suo arredamento non deve mutare sovente nel tempo, per evitare di dover ricomputare ad ogni cambiamento la sua funzione di trasferimento.
-- il sistema sarà ottimizzato per un unico punto di ascolto (*hot spot*), in modo non dissimile a quanto avviene oggi con un normale impianto stereo.
-- la sala di ascolto dovrà essere trattata acusticamente per limitare le onde stazionarie e le prime riflessioni, almeno nell’hot spot
-- la stanza di ascolto dovrebbe contenere da 12 a 16 casse acustiche indipendenti e almeno un sub woofer dedicato ai bassi sotto i 100Hz. L’utilizzo di uno o più sub è finalizzato a sia ridurre le dimensioni delle casse e quindi il loro costo ma anche a minimizzare i problemi con le fasi rendendo quanto più possibile le sorgenti puntiformi
-- il segnale in ingresso sarà esclusivamente digitale, il che significa che eventuali sorgenti analogiche dovranno subire un processo di digitalizzazione *prima* di essere riprodotte
-- il sistema di altoparlanti deve essere in grado di erogare nell’hot spot una pressione di **83 dB SPL** calcolato su con un segnale di calibrazione e permettere di avere un picco di SPL di almeno 103dB come consigliato da Bob Kats nel cap.14 del suo libro "Mastering Audio". Tale valore potrebbe essere incrementato a 93 dB SPL se si desidera seguire le specifiche [THX](http://www.acousticfrontiers.com/2013314thx-reference-level/) 
-- il sistema di altoparlanti deve avere  una risposta di frequenza senza eccessive discontinuità almeno nel range 100-18K anche la rotazione di fase non dovrebbe avere eccessivi salti. Non è richiesta assoluta linearità
-- il sistema di altoparlanti deve comprendere almeno un sub woofer in grado di emettere le frequenze da 20Hz con una pressione sonora di picco di 115db nell’hot spot in accordo con le specifiche THX. Si noti come tale requisito si rifletta sulla necessità nei fatti di avere uno o più subwoofer molto grossi e performanti
-- la distorsione armonica indotta dall'amplificazione dovrebbe mantenersi sotto la soglia di 0.1 db
-- la distorsione armonica delle casse sia più bassa possibile al valore di pressione nominale richiesto (che valore mettere come riferimento? come misurarlo?)
-- il rumore di fondo totale deve essere molto basso, cioè circa nel range tra 20 e 30 dB SPL calcolato ad impianto acceso e segnale assente.
+## Vision and project Objective
+The vision of this project is to utilize modern audio rendering technologies, convolution, and auralization to create a home listening room that can replicate the emotional experience obtained in various reference environments (HI end reference systems, acoustic concerts, jazz clubs, cinemas, pop concerts, etc. etc.). All of this should be achievable within a single environment, at reasonable costs, and with the ability to virtually change the audio system configuration for each musical track, adapting it to individual aesthetic preferences.
 
-> Il progetto prevede un range dinamico utile di circa 80dB, pari a poco più di 13 bit e quindi parecchio inferiore al limite teorico di 96dB risultanti dalle specifiche di un CD, ma comunque molto superiore alla reale risoluzione nella quasi totalità delle registrazioni commerciali (vedi [loudness war db](https://dr.loudness-war.info/)). Ad aggiungere rumore si fa sempre in tempo, e [può essere conveniente farlo](https://www.musicradar.com/tuition/tech/10-ways-to-use-noise-to-enhance-your-mixes-633348) perché anche il rumore di fondo concorre alla fisionomia di un impianto e comunque la dinamica percepita non sempre coincide con quella teorica (come nel caso degli LP ad esempio). D'altronde il dithering è prassi consolidata, se non obbligatoria, anche nei processi di mastering.
+The fundamental idea behind the project is to describe, using mathematical tools (i.e., impulses):
+1. The transfer function of a reference listening room where a specific audio reproduction setup (*target environment*) operates.
+2. The transfer function of one's own listening room.
 
-> [Nota sulla linearità ]
->  
-> Si osservi anche che la perfetta linearità di risposta in fase e in frequenza non è un requisito, ciò perché gli algoritmi di DRC (Digita Room Correction) e auralizzazione permettono di correggere sia fase che risposta in frequenza se entro ragionevoli limiti; inoltre la rotazione di fase e la non linearità di risposta in frequenza sono inevitabilmente introdotte da qualsiasi ambiente di ascolto che non sia anecoico e sono peraltro le principali componenti che caratterizzano una riproduzione audio. Va da se che anche l'assoluta linearità di risposta del sistema, obiettivo di un ascolto *Pro*, potrà essere solo approssimata, come del resto avviene nella quasi totalità dei project studio di piccole e medie dimensioni.
+Then, these functions will be used to compute a transformation of the input signal that replicates, within one's own domestic environment, the listening experience of the target environment.
 
-I seguenti vincoli sono poi utili per semplificare la complessità ddel sistema:
+While the project is primarily in the domain of pure entertainment, with appropriate modifications, it could serve as a proof-of-concept for a more ambitious project.
 
-- le casse devono essere direzionali e proiettare il suono prevalentemente frontalmente (no dipoli) per poter predire e limitare le prime riflessioni
-- il posizionamento delle casse dovrebbe essere preferibilmente simmetrico rispetto all’hot-spot; in una situazione ottimale le casse dovrebbero essere collocate simmetricamente sulla superficie di una sfera con al centro l'hot spot. Anche in questo caso è comunque prevista nel progetto una correzione dell’allineamento temporale e di e volume di emissione per compensare eventuali piccole differenze.
-- la frequenza di campionamento per il trattamento dei segnali digitali è fissata a 44.1Khz con una risoluzione di 24bit al fine di limitare la potenza computazionale necessaria e per permettere di utilizzare linee di trasmissione economiche (8 canali su una singola fibra ottica ADAT). Si osserva come comunque tale frequenza e risoluzione siano ampiamente sufficienti a realizzare i vincoli di pressione acustica e SNR richiesti. Di contro, eventuali risoluzioni più alte o più basse sul segnale in ingresso richiederanno un preventivo ricampionamento non critico grazie agli algoritmi di down-sampling oggi disponibili.
+If the theoretical objective is fully achieved, simply by changing the first of the input functions, it would be possible to listen to a recorded signal as it would sound on any audio system (professional or high-end) without any physical modification to one's own playback system. For example, listening to Louis Armstrong with electrostatic speakers, or a Marcus Miller solo with a powerful horn system, and even mixing the audio of a video in stereo, 5.1, 7.1, and Dolby ATMOS formats.
+
+Taking note of the impossibility of effectively capturing the impulses of a reference system and the current inability to use auralization algorithms in non-anechoic environments (or in headphones), pragmatically, the  objective of this project can be summarized in the following points:
+- allowing real-time "mastering" of the incoming audio material to adapt it to personal preferences,
+- supporting playback of any type of source format regardless of its encoding, format, resolution, or the number of its channels,
+- simulating a room with desired acoustic properties (e.g., simulating a big concert hall in a small space).
 
 
-## Requisiti funzionali
-I requisiti funzionali del sistema sono raccolti in 5 macro aree:
-- requisiti relativi ai **segnali in ingresso**, che evidenziano quali input sono compatibili con il sistema di riproduzione
-- i requisiti relativi al **player**, ovvero lo strumento che si occupa di decodificare i segnali di ingresso standarizzandoli e applicando eventuali trasformazioni *a grana grossa*. Tale strumento si occupa anche di visualizzare eventuali video facendosi carico di compensare eventuali ritardi introdotti dalla la catena dei processori audio. La visualizzaione ottimale del video non è prioritaria in questo progetto.
-- i requisiti relativi al **Digital signal processor**, ovvero lo strumento di effettuare le trasformazioni qualitative nei segnali di ingresso (remastering) e di rendering del suono in 3D. Rappresenta il cuore del sistema ed è realizzato attraverso una *pipeline* di processori audio digitali
-- i requisiti funzionali relativi alla configurazione della **sala di ascolto**
-- i requisiti relativi alle **applicazioni di controllo** tramite cui l’ascoltatore può interagire con il sistema (scelta brani, set-up volume, cambio configurazione di ascolto) tipicamente attraverso un tablet o un normale smartphone 
+## Requirements
+The functional requirements of the system are grouped into 5 main areas:
 
-I principali requisiti funzionali sono raccolti nel seguente diagramma:
+1. Requirements related to **input signals**, which highlight the compatible inputs with the audio reproduction system.
+2. Requirements related to the **player**, the tool responsible for decoding the input signals, standardizing them, and applying any coarse-grained transformations. This tool also handles the display of video and compensates for any delays introduced by the audio processor chain. Optimal video display is not a top priority in this project.
+3. Requirements related to the **Digital Signal Processor (DSP)**, the tool responsible for performing qualitative transformations on the input signals (remastering) and rendering sound in 3D. It represents the core of the system and is implemented through a pipeline of digital audio processors.
+4. Functional requirements related to the **listening room configuration**, which involves setting up the physical layout, positioning of speakers, and acoustic treatment to achieve the desired listening experience.
+5. Requirements related to **control applications**, through which the listener can interact with the system (selecting songs, adjusting volume, changing listening configurations). Typically, this interaction is done using a tablet or a standard smartphone.
+6. 
+Here is a functional view of the system:
 
 ![functional view](images/functional-view.png)
 
+The heart of the system is undoubtedly the chain of digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network.
 
-## Deploy example
-La seguente figura mostra una possibile configurazione logica per il deploy del progetto:
+The planned plugin pipeline is summarized in the following figure:
 
-![deploy view](images/deploy-view.png)
-
-Sono previste due aree fisiche distinte:
-- un'area in cui collocare la strumentazione rumorosa, principalmente a causa di ventole e sistemi di raffreddamento dei processori
-- una sala di ascolto con una geometria simmetrica rispetto all'hot spot.
+![vst host](images/dsp.png)
 
 
-## Vst host
-Il cuore del sistema è senza dubbio la catena di processori digitali. L’ipotesi attuale in questo progetto (a sono graditi consigli e alternative) è di usare un VST host e una serie di plugin VST, a parità di qualità sono da preferire plugin con codice open source.
+## Constraints
+Despite the attempt to operate as scientifically as possible, it is reasonable to assume that in practice, some ideal conditions assumed by the theory may not be met, and compromises may be necessary. These compromises will make the results of this project subjective and difficult to replicate. With this awareness, we accept the following constraints:
 
-La pipeline di plugin prevista è sintetizzata nella seguente figura:
+- The room should be primarily dedicated to listening, meaning its furnishings should not change frequently over time to avoid recomputing its transfer function with every change.
+- The system will be optimized for a single listening position (*hot spot*), similar to a standard stereo setup today.
+- The listening room should be acoustically treated to limit standing waves and early reflections, at least in the hot spot area.
+- The listening room should contain 12 to 20 independent loudspeakers and at least one subwoofer dedicated to bass frequencies below 100Hz. The use of one or more subwoofers aims to reduce the size and cost of the main speakers and minimize phase issues, making the sources as close to point sources as possible.
+- The input signal should be exclusively digital, meaning any analog sources must undergo a process of digitization *before* being reproduced.
+- The speaker system must be capable of delivering **83 dB SPL** at the hot spot, calculated with a calibration signal, and allow for a peak SPL of at least 103dB as recommended by Bob Katz in chapter 14 of his book "Mastering Audio." This value could be increased to 93 dB SPL if adhering to [THX specifications](http://www.acousticfrontiers.com/2013314thx-reference-level/).
+- The speaker system should have a frequency response with minimal discontinuities, at least in the 100-18K range, and the phase rotation should not exhibit excessive jumps. Absolute linearity is not strictly required.
+- The speaker system must include at least one subwoofer capable of emitting frequencies down to 20Hz with a peak sound pressure level of 115dB at the hot spot, according to THX specifications. This requirement implies the need for one or more large and high-performance subwoofers.
+- The harmonic distortion induced by the amplification should remain below 0.1 dB.
+- The harmonic distortion of the speakers should be as low as possible at the nominal sound pressure level required (the reference value and measurement method are yet to be determined).
+- The total background noise should be very low, approximately in the range of 20 to 30 dB SPL, calculated with the system on and no signal present.
 
-![vst host](images/vst-host.png)
+> The project aims for a useful dynamic range of approximately 80dB, just over 13 bits, which is considerably lower than the theoretical limit of 96dB resulting from CD specifications, but still much higher than the real resolution in the vast majority of commercial recordings (see [loudness war db](https://dr.loudness-war.info/)). Noise can be added later, and [it can be beneficial to do so](https://www.musicradar.com/tuition/tech/10-ways-to-use-noise-to-enhance-your-mixes-633348) because background noise also contributes to the sonic character of a system, and perceived dynamics don't always align with theoretical ones (as with LPs, for example). Moreover, dithering is a well-established, if not obligatory, practice in mastering processes.
 
-## Come contribuire al progetto
+> [Note on linearity]
+>
+> It should be noted that perfect linearity in phase and frequency response is not a strict requirement, as DRC (Digital Room Correction) and auralization algorithms can correct both phase and frequency response within reasonable limits. Additionally, phase rotation and non-linear frequency response are inevitably introduced by any listening environment that is not anechoic and are, in fact, the primary components that characterize audio reproduction. Absolute linearity of the system's response, which is a goal in professional listening, can only be approximated, as is the case in the vast majority of small and medium-sized project studios.
 
-Molti punti in questo progetto sono ancora aperti, per ciascuno di questi è disponibile un’area di [Polis](https://pol.is/home), usata come piattaforma conversazionale, nella speranza che emerga una opinione condivisa:
+The following constraints are useful to simplify the system's complexity:
 
-- [what’s the best digital prcessing pipeline manager: simple VST host or DAW?](https://pol.is/9wpnehy6ue)
-- [SPS or ambisonics: what plugins?](https://pol.is/5ka3essadr)
+- The speakers must be directional and project sound predominantly frontally (no dipoles) to predict and limit early reflections.
+- The positioning of the speakers should preferably be symmetric with respect to the hot spot; in an optimal situation, the speakers should be symmetrically placed on the surface of a sphere, with the hot spot at the center. However, the project also includes adjustments to temporal alignment and emission volume to compensate for any minor differences.
+- The sampling frequency for digital signal processing is set at 44.1 kHz with a resolution of 24 bits to limit the required computational power and to allow for the use of cost-effective transmission lines (8 channels on a single ADAT optical fiber). It is observed that this frequency and resolution are more than sufficient to meet the required sound pressure level and SNR constraints. However, any higher or lower input signal resolutions will require a preliminary non-critical resampling using the available down-sampling algorithms.
+
+
+## Reference implementation
+
+Two distinct physical areas are planned:
+
+1. An area to place the noisy equipment, mainly due to fans and processor cooling systems.
+2. A listening room with a geometry that is symmetrical with respect to the hot spot.
+
+
+TBD
+
+
+
+## How to Contribute to the Project
+Many aspects of this project are still open for discussion, and for each of these points, a [Polis](https://pol.is/home) area is available as a conversational platform, in the hope of reaching a shared opinion:
+
+- [What's the best digital processing pipeline manager: a simple VST host or DAW?](https://pol.is/9wpnehy6ue)
+- [SPS or ambisonics: which plugins to use?](https://pol.is/5ka3essadr)
 - [Best buy suggestions for speakers and amp in LIROMA?](https://pol.is/8eardcdusj)
 
-Ovviamente vi prego di segnalare ogni errore, omissione, richiesta di estensione nelle [issues](https://github.com/ecow/liroma/issues) di questo progetto.
+If you notice any errors, omissions, or have suggestions for extensions, please report them in the [issues](https://github.com/ecow/liroma/issues) of this project.
 
-Se avete realizzato qualcosa di simile e volete condividere la vostra esperienza segnalatemelo e provvedeò ad inserirlo in una sezione di questo progetto.
-
-## Road map
-Il progetto si articola in tre fasi
-1) [setup listening room](https://trello.com/b/iI8N1AVq/liroma)
-    - [room layout design](images/phase1-room-layout.png)
-    - basic acoustic treatment
-    - up mix and default virtual listening environments
-    - test speaker types and placement tuning
-    - full 7.1 support with 6 extra front speakers + 2 side speakers + 1 extra sub for spatial reinforcement (just volume control)
-    - basic bass management
-    - no auralization
-2) Digital room optimization
-    - speakers upgrade
-    - 15.2 channels support,
-    - temporal alignment
-    - DRC
-    - Bass management
-    - loudness calibration (K20, K15, K10)
-3) Auralization
-    - Dolby Atmos support
-    - ambisonic support
-    - experiment the virtual speakers' emulation 
+If you have implemented something similar and want to share your experience, please let me know, and I will include it in a section of this project.
 
 
-## Licenza
-Il seguente progetto è Copyright by Enrico Fagnoni ed è rilasciato con licenza [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) il sw sviluppato specificamente per questo progetto è rilasciato con licenza [MIT](LICENSE) 
+## License
+This project is Copyright by Enrico Fagnoni and is released under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/). The software specifically developed for this project is released under the [MIT License](LICENSE).
+
 
 
 ## References
-Questo progetto nasce grazie ad alcuni straordinari lavori, ai cui autori va la mia più grande ammirazione:
+This project owes its existence to the extraordinary works of some authors, to whom I have the greatest admiration:
+
 - Angelo Farina [ambisonic pages](http://pcfarina.eng.unipr.it/ambisonics.htm)
 - Alberto Amendola and Angelo Farina - [SPS](http://www.upv.es/contenidos/ISVA2011/info/U0568405.pdf)
 - Michael Vorländer - [Auralization: Fundamentals of Acoustics, Modelling, Simulation, Algorithms and Acoustic Virtual Reality](https://www.amazon.it/Auralization-Fundamentals-Acoustics-Simulation-Algorithms/dp/3642080235)
