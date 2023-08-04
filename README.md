@@ -94,13 +94,22 @@ The following constraints are useful to simplify the system's complexity:
 
 ## Reference implementation
 
+### Room design
+
 Two distinct physical areas are planned:
 
 1. An area to place the noisy equipment, mainly due to fans and processor cooling systems.
-2. A listening room with a geometry that is symmetrical with respect to the hot spot.
+2. A listening room with a geometry that is symmetrical with respect to the hot spot
 
+- mappa fisica
+- analisi dei modi
+- dumping
 
-TBD
+### Cabling
+
+### Speaker management
+
+### Remastering
 
 
 
