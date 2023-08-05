@@ -90,11 +90,37 @@ The following constraints are useful to simplify the system's complexity:
 - The speakers must be directional and project sound predominantly frontally (no dipoles) to predict and limit early reflections.
 - The positioning of the speakers should preferably be symmetric with respect to the hot spot; in an optimal situation, the speakers should be symmetrically placed on the surface of a sphere, with the hot spot at the center. However, the project also includes adjustments to temporal alignment and emission volume to compensate for any minor differences.
 - The sampling frequency for digital signal processing is set at 44.1 kHz with a resolution of 24 bits to limit the required computational power and to allow for the use of cost-effective transmission lines (8 channels on a single ADAT optical fiber). It is observed that this frequency and resolution are more than sufficient to meet the required sound pressure level and SNR constraints. However, any higher or lower input signal resolutions will require a preliminary non-critical resampling using the available down-sampling algorithms.
+- The exact match of speaker models is not a strong requirement because each speaker must be individually equalized.
 
 
 ## Reference implementation
 
-### Room design
+### Software
+- [REW - Room EQ Wizard Room Acoustics Software](https://www.roomeqwizard.com/) for measurements
+- Yamaha DME Designer [[Download](https://it.yamaha.com/support/updates/dme_des.html)] [[Doc](https://it.yamaha.com/files/download/other_assets/5/325135/dme64n_en_om_h0.pdf)] for speaker processors
+- [JRiver Media Center](https://jriver.com/) for media player, re-mastering, vst host and DLNA server
+- [RME Totalmix](https://www.rme-audio.de/totalmix-fx.html) for player routing to speaker processor
+- Mastering plugins (TBD)
+- [jremote APP](https://jremote.jriver.com/) as DNLA controller
+- Synology Nas for media storage
+
+### Services
+- Amazon Music HD plan
+
+
+### Hardware
+- Windows 10 old PC to host Player and HW controls (64 bit)
+- Chromecast audio with optical out
+- DAC RME Fireface 800 (for analogicin out, digital,), Motu 2408 (x2) for analogic out
+- Yamaha DME64N + 2 My16 Adat boards
+- 10x cheap speakers for auralization and spatialization driven by rotel + denon multichannel amps
+- 2x Klipsch Cornwall as front monitors driven by electrocompaniet amp
+- Klipsch Heresy as center driven by quad amp (bi-amplification)
+- Genelec 7070 for infra sub/ LFE
+- 2x Yamaha sub
+- 2x Tannoy for rear surround (stage accompany amp)
+
+### Room 
 
 Two distinct physical areas are planned:
 
