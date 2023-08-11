@@ -6,9 +6,9 @@ MY-FI LIstening ROom Modelized by Auralization and other digital processing
 
 
 ## Abstract
-This project aims to utilize audio signal spatialization technologies, convolution, and auralization to create a personal immersive listening room.
+This project aims to utilize audio signal spatialization technologies, convolution, and auralization to create a personal, software configurable, immersive listening room.
 
-The designed system intends to reproduce the desired environment and timbre from any digital audio source, regardless of its encoding, format, resolution, or the number of its channels.
+The designed system intends to reproduce the desired sound, environment, and timbre from any digital audio source, regardless of its encoding, format, resolution, or number of channels.
 
 
 ## Rationale
@@ -19,13 +19,13 @@ For instance, the reverb we hear in numerous recordings is rarely real; it is me
 [Professor Angelo Farina](https://personale.unipr.it/it/ugovdocenti/person/18339) from the University of Parma has gone a step further by using convolution and impulses to predict and listen to the acoustics of theaters and concert halls *before* they are constructed. This is made possible through a process called [auralization](https://en.m.wikipedia.org/wiki/Auralization), which convolves audio signals recorded in anechoic environments with an acoustic model of the theater developed by specific software, and transforms them into *immersive audio* for binaural listening using regular headphones, as well-described in [this article](http://pcfarina.eng.unipr.it/Public/Papers/119-Ciarm98.PDF). It is also possible to experience immersive audio using a network of independent speakers coordinated by sophisticated audio rendering algorithms based on technologies such as [ambisonics](https://en.m.wikipedia.org/wiki/Ambisonics) or [SPS](http://www.angelofarina.it/sps-conversion.htm). 
 
 Currently, there are [standards](https://www.aes.org/e-lib/browse.cfm?elib=4782) for "pro" listening rooms, specifically control and mastering rooms designed for multichannel productions.
-From the consumer point of view, the extreme subjectivity regarding aesthetic judgment of sound reproduction has recently given rise to the notion of [MY-FI](https://www.afdigitale.it/my-fi-audio-una-necessaria-e-logica-personalizzazione/), acknowledging the impossibility of having a *perfect system* that sounds excellent in any environment and with any music genre. In fact, even listening to the signal in a production studio often does not satisfy purely hedonistic points of view; indeed, many audiophiles describe such sound as fatiguing, cold, excessively detailed, and so on.
+From the consumer point of view, the extreme subjectivity regarding the aesthetic judgment of sound reproduction has recently given rise to the notion of [MY-FI](https://www.afdigitale.it/my-fi-audio-una-necessaria-e-logica-personalizzazione/), acknowledging the impossibility of having a *perfect system* that sounds excellent in any environment and with any music genre. Even listening to the signal in a production studio often does not satisfy purely hedonistic points of view; indeed, many audiophiles describe such sound as fatiguing, cold, excessively detailed, and so on.
 
 In essence, it can be affirmed that each audio system possesses its own distinctive qualitative characteristics resulting from the combination of equipment, preferred music genre, source signal, and listening environment. The latter is understood in its broadest sense, encompassing the room's geometry, construction materials, furnishings, acoustic treatment, placement of audio equipment, and even the most minute accessories, which are the domain of *fine-tuning* enthusiasts.
 
 
 
-## Vision and project's Objective
+## Vision and Project's Objective
 The vision of this project is to utilize modern audio rendering technologies, convolution, and auralization to create a home listening room that can replicate the emotional experience obtained in various reference environments (HI end reference systems, acoustic concerts, jazz clubs, cinemas, pop concerts, etc. etc.). All of this should be achievable within a single environment, at reasonable costs, and with the ability to virtually change the audio system configuration for each musical track, adapting it to individual aesthetic preferences.
 
 The fundamental idea behind the project is to describe, using mathematical tools in the digital domain (i.e., impulses):
@@ -36,7 +36,7 @@ Then, these functions will be used to compute a transformation of the input sign
 
 While the project is primarily in the domain of pure entertainment, with appropriate modifications, it could serve as a proof-of-concept for a more ambitious project.
 Taking note of the extreme difficulties to use auralization algorithms in non-anechoic environments (or in headphones), pragmatically, the  objective of this project can be summarized in the following points:
-1. allowing real-time "mastering" of the incoming audio material to adapt it to personal taste,
+1. allowing real-time "re-mastering" of the incoming audio material to adapt it to personal taste,
 2. supporting playback of any type of source format regardless of its encoding, format, resolution, or the number of its channels,
 3. simulating a room with desired acoustic properties (e.g., simulating a big concert hall in a small space).
 
@@ -46,7 +46,7 @@ The functional requirements of the system are grouped into 5 main areas:
 
 1. Requirements related to **input signals**, which highlight the compatible inputs with the audio reproduction system.
 2. Requirements related to the **player**, the tool responsible for decoding the input signals, standardizing them, and applying any coarse-grained transformations. This tool also handles the display of video and compensates for any delays introduced by the audio processor chain. Optimal video display is not a priority in this project.
-3. Requirements related to the Digital Signal Processor (DSP), the tool responsible for performing qualitative transformations on the input signals (**remastering DSP**) and mapping input  channels in the physical **speakers' management**. It represents the core of the system and is implemented through a pipeline of SW and HW digital audio processors.
+3. Requirements related to the Digital Signal Processor (DSP), the tool responsible for performing qualitative transformations on the input signals (**re-mastering DSP**) and mapping input channels in the physical **speakers' management**. It represents the core of the system and is implemented through a pipeline of SW and HW digital audio processors.
 4. Functional requirements related to the **listening room configuration**, which involves setting up the physical layout, cabling, positioning of speakers, and acoustic treatment to achieve the desired listening experience.
 5. Requirements related to **control applications**, through which the listener can interact with the system (selecting songs, adjusting volume, changing listening configurations). Typically, this interaction is done using a tablet or a standard smartphone.
 
@@ -54,55 +54,62 @@ Here is a functional view of the system:
 
 ![functional view](images/functional-view.png)
 
-The heart of the system is undoubtedly the chain of digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker networkas summarized in the following figure:
+The heart of the system is undoubtedly the chain of digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network as summarized in the following figure:
 
 ![signal routing](images/dsp.png)
 
 ### Input signals requirements
-- The input SHOULD be captured directly in the source digital domain, for instance in files with lossless compression encoding, or directly from teh streaming device
-- Analogic sources MUST be sampled at 44.1K 24-bit by a high-quality converters
+- The input SHOULD be captured directly in the source digital domain, for instance in files with lossless compression encoding, or directly from the streaming service
+- Analogic sources MUST be sampled at 44.1K 24-bit by high-quality converters
 
 > Note that for DRM, Dolby ATMOS encoded sources, at present, cant be processed in the digital domain, so  a dolby ATMOS decoder is needed, and its output MUST be re-sampled back to the digital domain. In other words, sources protected by DRM must be treated as analogic sources. For personal use, some sw allows to remove DRM. This apply to Blu Ray to some formats but not yet to dolby ATMOS.
 
 ### Player system requirements
 - It MUST support DNLA protocol
-- Input MUST resample, if needed, to 44.1K using a known well-done algorithm (e.g. [SoZ](https://sox.sourceforge.net/SoX/Resampling))
-- It MUST control the overall volume
-- It SHOULD support the EBU R 128 volume detection. 
-- It MUST support remastering features (e.g. implement a VST HOST)
-- It MUST support Video sources
+- Input MUST be resampled, if needed, to 44.1K using a known well-done algorithm (e.g. [SoX](https://sox.sourceforge.net/SoX/Resampling))
+- It MUST allow to control the overall volume
+- It SHOULD support the EBU R 128 loudness detection and automatic leveling. 
+- It MUST support re-mastering features (e.g. implement a VST HOST)
+- It SHOULD support video sources
 - It SHOULD support latency sync with video (e.g. lipsync feature)
 - It MUST NOT introduce any digital processing out of the user's control. That is, the path of the digital signal MUST be traceable END-TO-END
   
-If not all features can be fulfilled by a single sw player, specialized players CAN be adopted. For example a SW player for files a VST host for external digital sources.
+If not all features can be fulfilled by a single sw player, different specialized players CAN be adopted. For example a SW player for files and a VST host for external digital sources.
 
 > Note that some old OS and a few of audio drivers introduce a system level processing that resample digital audio and apply other unclear transformation. ALL audio feature at operative system level MUST be disabled. All DSP MUST occur at player level or at re-mastering level (e.g. VST plugins)
 
-The player system is also responsible for the upmixing (e.g. from stereo to 7.1 channels) of the digital source.
+The player system is also responsible for the upmixing and for the auralization (e.g. from stereo to 7.1 channels) of the digital sources.
 
-### Remastering DSP requirements
-- Remastering MUST occurs in the player system.
-- The remastering sub-system SHOULD support sw VST plugin 
+### re-mastering DSP requirements
+- re-mastering MUST occur in the player system.
+- The re-mastering sub-system SHOULD support VST plugins 
 - Plugin processing SHOULD work at least with 32bit of resolution.
 
-> Because liroma is not a real time system, the latency is not a problem. You can use big buffers to optimize the plugin performances. When possible prefer quality instead of low latency.
+> Because liroma is an OUTPUT only processor, the latency is a minor problem. You can use big buffers to optimize the plugins performances. When possible prefer quality instead of low latency. If video is supported, a delay on video stream could be needed.
 
 
-### Speakers'management requirements
-The main objective of the Speakers' management is to map X input channel into Y speakers with Y >= X. This means distributing the input channel in a 3D space simulating the speaker number and placement required by the remastered sources
+### Speakers' management requirements
+The main objective of the Speakers' management is to map X input channels into Y speakers. This means distributing the input channel in a 3D space simulating the speaker number and placement required by the remastered sources
 - all individual speakers MUST support bass management, input leveling, DRC equalization, and temporal alignment;
 - bass management MUST be able to be conformant to multichannel specifications for both music and video (e.g. +10db on LFE);
 - bass management MUST take into account the room modal response
   
 The typical use case is:
 - a stereo stream is spatialized by a SW DSP at the player level that transforms it into a 7.1 source
-- the 8 channel input is routed to a 15.3 speaker configuration simulating AES 7.1 placement
-- the bass management optimizes each speaker's bandwidth
+- the 8 channel input is routed to a 15.3 speaker configuration simulating AES 7.1 speaker placement requirement
+- the bass management optimizes each speaker's bandwidth according to source specifications
 
 ### Listening room requirements
-TBD
+- it SHOULD limit resonances in the hotspot with a flat response as much as possible.
+- it SHOULD have a semi-permanent physical configuration
+- it SHOULD NOT contain noising equipment
+- it MUST ensure less than 30dB SPL of noise floor
+
+
 ### Control applications requirements
-TBD
+- it MUST allow to select the input source
+- it MUST act as a  remote player controller
+- it MUST switch the configuration of the rooms (scene, HW presets, volume, etc.)
 
 ## Constraints
 Despite the attempt to operate as scientifically as possible, it is reasonable to assume that in practice, some ideal conditions in the theory may not be met, and compromises may be necessary. These compromises will make the results of this project subjective and difficult to replicate. With this awareness, we accept the following constraints:
@@ -148,19 +155,21 @@ The following constraints are useful to simplify the system's complexity:
 
 
 ### Hardware
-- Windows 10 old PC to host Player and HW controls (64 bit)
-- Chromecast audio with optical out
-- DAC RME Fireface 800 (for analogicin out, digital,), Motu 2408 (x2) for analogic out
-- Yamaha DME64N + 2 My16 Adat boards [[Doc](https://it.yamaha.com/files/download/other_assets/5/325135/dme64n_en_om_h0.pdf)]
-- 10x cheap speakers for auralization and spatialization driven by rotel + denon multichannel amps
-- 2x Klipsch Cornwall as front monitors driven by electrocompaniet amp
+The reference hardware is based on some old gears that you can find in the used market for a reasonable price.
+
+- Windows 10 old PC to host Player and HW controls (64 bit) 8GB RAM, 256GB SDD 
+- Chromecast audio with optical out to process streaming services
+- DAC [RME Fireface 800](https://archiv.rme-audio.de/en/products/fireface_800.php) (for analogic in, main speaker out,), 
+- 2x [Motu 2408](https://motu.com/en-us/download/product/22/?details=true&page=5) DAC for analogic out for  auralization
+- [Yamaha DME64N](https://it.yamaha.com/it/products/proaudio/processors/dme-n/) + 2 My16 Adat boards [[Doc](https://it.yamaha.com/files/download/other_assets/5/325135/dme64n_en_om_h0.pdf)]
+- 10x cheap speakers for auralization and spatialization driven by a Rotel and a Denon multichannel amps
+- 2x Klipsch Cornwall as front monitors driven by Electrocompaniet amp
 - Klipsch Heresy as center driven by quad amp (bi-amplification)
-- Genelec 7070 for infra sub/ LFE
+- Genelec 7070A for infra sub/LFE
 - 2x Yamaha sub
 - 2x Tannoy for rear surround (stage accompany amp)
 
 ### Room 
-
 Two distinct physical areas are planned:
 
 1. A small room to place the noisy equipment, mainly due to fans and processor cooling systems.
@@ -205,7 +214,7 @@ Such speaker placement is suitable to simulate the standard configurations just 
 - 7.1.4
 - ambisonic cube
 
-Creative signal mix, together with re-mastering allow to simulate of various room responses according to personal taste. Each logical configuration can be assigned to a "scene" that works together with remastering plugins to reproduce the preferred sound. Scenes and remastering configurations can be assigned to each single music recording allowing an optimized spatialization and a better-perceived soundscape for the selected audio context.
+Creative signal mix, together with re-mastering allow to simulate of various room responses according to personal taste. Each logical configuration can be assigned to a "scene" that works together with re-mastering plugins to reproduce the preferred sound. Scenes and re-mastering configurations can be assigned to each single music recording allowing an optimized spatialization and a better-perceived soundscape for the selected audio context.
 
 
 ### Speaker management
@@ -222,9 +231,13 @@ Bass management is also in charge to change the LFE channel response for video s
 Each speaker (with bass management)  MUST be calibrated with a pink noise signal at -20Dbf to generate about 73 dbSPL in all 1/3 octave bands at the hot spot. 
 
 
-### Remastering
+Here some examples of speaker scene used to support different routing and configuration:
 
+![Scenes](images/scenes.png)
 
+### re-mastering
+
+TBD
 
 ## How to Contribute to the Project
 Many aspects of this project are still open for discussion, and for each of these points, a [Polis](https://pol.is/home) area is available as a conversational platform, in the hope of reaching a shared opinion:
