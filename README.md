@@ -259,8 +259,9 @@ This project is Copyright by Enrico Fagnoni and is released under the [CC BY 4.0
 ## References
 This project owes its existence to the extraordinary works of some authors, to whom I have the greatest admiration:
 
+- AA.VV by Yamaha [Multichannel Monitoring Tutorial Booklet - PDF](https://jp.yamaha.com/files/download/other_assets/5/331225/M2TB_r352E.pdf)
 - Angelo Farina [ambisonic pages](http://pcfarina.eng.unipr.it/ambisonics.htm)
-- Alberto Amendola and Angelo Farina - [SPS](http://www.upv.es/contenidos/ISVA2011/info/U0568405.pdf)
+- Alberto Amendola and Angelo Farina - [SPS - PDF](http://www.upv.es/contenidos/ISVA2011/info/U0568405.pdf)
 - Michael Vorländer - [Auralization: Fundamentals of Acoustics, Modelling, Simulation, Algorithms and Acoustic Virtual Reality](https://www.amazon.it/Auralization-Fundamentals-Acoustics-Simulation-Algorithms/dp/3642080235)
 - Bob Kats - [Mastering Audio: The Art and the Science](https://www.amazon.it/Mastering-Audio-Science-Bob-Katz/dp/0240818962).
 - David Monacchi - [FRAGMENTS OF EXTINCTION](https://www.fragmentsofextinction.org/)
