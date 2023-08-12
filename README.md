@@ -54,9 +54,13 @@ Here is a functional view of the system:
 
 ![functional view](images/functional-view.png)
 
-The heart of the system is undoubtedly the chain of digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network as summarized in the following figure:
+The heart of the system is undoubtedly the chain of digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network.
+
+Some possible signal routing enabled by liroma are summarized in the following figure:
 
 ![signal routing](images/dsp.png)
+
+The red devices configuration and the signal routing should be managed by a the control application
 
 ### Input signals requirements
 - The input SHOULD be captured directly in the source digital domain, for instance in files with lossless compression encoding, or directly from the streaming service
@@ -80,7 +84,7 @@ If not all features can be fulfilled by a single sw player, different specialize
 
 The player system is also responsible for the upmixing and for the auralization (e.g. from stereo to 7.1 channels) of the digital sources.
 
-### re-mastering DSP requirements
+### Re-mastering DSP requirements
 - re-mastering MUST occur in the player system.
 - The re-mastering sub-system SHOULD support VST plugins 
 - Plugin processing SHOULD work at least with 32bit of resolution.
@@ -103,7 +107,7 @@ The typical use case is:
 - it SHOULD limit resonances in the hotspot with a flat response as much as possible.
 - it SHOULD have a semi-permanent physical configuration
 - it SHOULD NOT contain noising equipment
-- it MUST ensure less than 30dB SPL of noise floor
+- it MUST ensure less than 30dB SPL of the noise floor
 
 
 ### Control applications requirements
@@ -150,6 +154,7 @@ The following constraints are useful to simplify the system's complexity:
 - [jremote APP](https://jremote.jriver.com/) as DNLA controller
 - Synology Nas for media storage
 
+
 ### Services
 - Amazon Music HD plan
 
@@ -163,30 +168,31 @@ The reference hardware is based on some old gears that you can find in the used 
 - 2x [Motu 2408](https://motu.com/en-us/download/product/22/?details=true&page=5) DAC for analogic out for  auralization
 - [Yamaha DME64N](https://it.yamaha.com/it/products/proaudio/processors/dme-n/) + 2 My16 Adat boards [[Doc](https://it.yamaha.com/files/download/other_assets/5/325135/dme64n_en_om_h0.pdf)]
 - 10x cheap speakers for auralization and spatialization driven by a Rotel and a Denon multichannel amps
-- 2x Klipsch Cornwall as front monitors driven by Electrocompaniet amp
-- Klipsch Heresy as center driven by quad amp (bi-amplification)
+- 2x main front monitor (horn based) as driven by a class A amp
+- Main center driven by a good bi-amplification
 - Genelec 7070A for infra sub/LFE
-- 2x Yamaha sub
-- 2x Tannoy for rear surround (stage accompany amp)
+- 2x small sub for spatialization and mode control
+- 2x passive midfield monitor for rear surround (driven by a stereo pro amp)
+
+The RME board serves both to transfer PC playback channels to the speaker management (DME64N), and as DAC for the main speaker. This allows to bypass the DME64N and implement "bit perfect" configurations where digital sources feed directly the DAC without any change.
 
 ### Room 
 Two distinct physical areas are planned:
 
 1. A small room to place the noisy equipment, mainly due to fans and processor cooling systems.
-2. A 6mx4m listening room with a geometry that is symmetrical with respect to the hot spot
+2. A 6mx4m listening room with a geometry that is symmetrical to the hot spot, the room is logically divided in two sub-area: south (front) and nord (rear).
 
-The room modal analysis on the low frequencies shows:
-- a pick at 27.6hz (and its harmonics 51, 76, etc), 
+The listening room modal analysis on the low frequencies shows:
+- a peak at 27.6hz (and its harmonics 51, 76, etc), 
 - a dip at 38.4Hz (and its harmonics 51, 76, etc))
-- a pick at 40.6hz (and its harmonics 82, 76, etc), 
+- a peak at 40.6hz (and its harmonics 82, 76, etc), 
 
-The area between 70 and 110 is critical due to the presence of many adjacents dips and picks.
+The area between 70 and 110 is critical due to the presence of many adjacent dips and peaks.
 The most critical resonant frequencies are 77Hz and 84-85 hz
 
 
-
 ### speaker and hot spot placement placement
-The hotspot is placed about the center of the listening room, with a tollerance of 30cm in all directions.
+The hotspot is placed about the center of the listening room, with a tolerance of 30cm in all directions.
 
 There are 5 main speakers + 10 small speakers + 3 subwoofer (one capable to go down 20Hz)
 
@@ -194,12 +200,12 @@ There are 5 main speakers + 10 small speakers + 3 subwoofer (one capable to go d
 
 
 At the hot spot, on main speakers and subs placement shows:
-- a big pick at  55Hz
-- a critical area betwwen 80 and 120Hz
-- a  dip at 107
+- a big peak at 55Hz
+- a critical area between 80Hz and 120Hz
+- a dip at 107Hz
 
 
-The theorical modal response on the dumped room in the hostspot, considering about 15% absorbtion in all directions is and  the range 20-300Hz:
+The theoretical modal response on the dumped room in the host spot, considering about 15% absorption in all directions is and  the range 20-300Hz:
 
 ![dumped room response](images/modal_response_on_dumped_room.png)
 
@@ -217,6 +223,15 @@ Such speaker placement is suitable to simulate the standard configurations just 
 Creative signal mix, together with re-mastering allow to simulate of various room responses according to personal taste. Each logical configuration can be assigned to a "scene" that works together with re-mastering plugins to reproduce the preferred sound. Scenes and re-mastering configurations can be assigned to each single music recording allowing an optimized spatialization and a better-perceived soundscape for the selected audio context.
 
 
+### Cabling
+The system cabling is realized using a mix of optical cables (ADAT), balanced signal cables, unbalanced cables,75oHm rf cables,and audio power cables as depicted in the following diagram:
+
+![cabling diagram](images/cabling_view.png)
+
+> There are still some criticisms to solve:
+> - the ADAT cable that connect the machine room to the south area in the listening room excedes in length the ADAT specs. It is not clear > if this can create problems
+> - The center amp accepts only unbalanced inputs while the input cable is balanced, this makes the balanced cable used as two unbalanced cables with phase rotated of 180°. Because of the cable lenght (more than 10m) some ground loop could be  generated
+
 ### Speaker management
 
 Each speaker is processed by a set of DSPs:
@@ -224,20 +239,26 @@ Each speaker is processed by a set of DSPs:
 - a digital delay aligns the temporal gap between speakers
 - a 6-band parametric equalizer corrects the distortions introduced by room geometry (DRC)
 
-The bass management sums the low frequencies contribution of the speaker that require it. Phase and delays are used to minimize the room modal response problems.
+The bass management sums the low-frequency contributions of the speaker that requires it. Phase and delays are used to minimize the room modal response problems.
 
 Bass management is also in charge to change the LFE channel response for video sources (i.e. +10db) according to AES specifications.
 
 Each speaker (with bass management)  MUST be calibrated with a pink noise signal at -20Dbf to generate about 73 dbSPL in all 1/3 octave bands at the hot spot. 
 
-
-Here some examples of speaker scene used to support different routing and configuration:
+Here some examples of speaker scenes used to support different routing and configurations:
 
 ![Scenes](images/scenes.png)
 
-### re-mastering
 
-TBD
+### re-mastering
+The re-mastering feature solves three classes of problems:
+- adapts the recorded sound to personal taste (e.g. apply analogic valve distortion, compression, de-essing, etc.)
+- upmixs, spatializes, and auralizes the input source to simulate different geometry for the listening room (i.e. a large hall, a jazzaclub, a church)
+- volume adaptation to reduce the different mastering choice in source recording (e.g. k20, k16,k10) 
+
+Spatialization, auralization and upmix  could use various techniques phase shifts, pan, delay, reverbs, impulse convolutions, ambisonic. 
+
+To do this, specialized plugins are required. At present liroma uses jriver proprietary plugins
 
 ## How to Contribute to the Project
 Many aspects of this project are still open for discussion, and for each of these points, a [Polis](https://pol.is/home) area is available as a conversational platform, in the hope of reaching a shared opinion:
