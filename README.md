@@ -220,12 +220,14 @@ The theoretical modal response on the dumped room in the host spot, considering 
 Such speaker placement is suitable to simulate the standard configurations just mixing the input signal setup proper delay delays:
 - stereo
 - 2.1
+- LCR
 - 3.1
 - quadriphonic
 - 5.1
 - 6.1
 - 7.1
 - 7.1.4
+- 15.1
 - ambisonic cube
 
 Creative signal mix, together with re-mastering allow to simulate of various room responses according to personal taste. Each logical configuration can be assigned to a "scene" that works together with re-mastering plugins to reproduce the preferred sound. Scenes and re-mastering configurations can be assigned to each single music recording allowing an optimized spatialization and a better-perceived soundscape for the selected audio context.
