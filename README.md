@@ -61,7 +61,7 @@ Some possible signal routing enabled by liroma are summarized in the following f
 
 ![signal routing](images/dsp.png)
 
-The red devices configuration and the signal routing should be managed by a the control application
+> **NOTE**: the red devices configuration should be managed by the control application
 
 ### Input requirements
 - The input SHOULD be captured directly in the source digital domain, for instance in files with lossless compression encoding, or directly from the streaming service
@@ -116,7 +116,7 @@ The typical use case is:
 
 
 ### Control applications requirements
-The control application provides simple user interface to the liroma system. In principle is performed by one or more app used by the listener directly in the hot spot; e.g. a mobile app on smartphone o tablet, one or more web app on a laptop, a special surface control device, etc.
+The control application provides a simple user interface to the liroma system. In principle is performed by one or more apps used by the listener directly in the hot spot; e.g. a mobile app on smartphone o tablet, one or more web app on a laptop, a special surface control device, etc.
 
 - it MUST allow to select the input source
 - it MUST allow change/mute the system master volume
@@ -199,7 +199,7 @@ The area between 70 and 110 is critical due to the presence of many adjacent dip
 The most critical resonant frequencies are 77Hz and 84-85 hz
 
 
-### speaker and hot spot placement placement
+### speaker and hot spot placement
 The hotspot is placed about the center of the listening room, with a tolerance of 30cm in all directions.
 
 There are 5 main speakers + 10 small speakers + 3 subwoofer (one capable to go down 20Hz)
