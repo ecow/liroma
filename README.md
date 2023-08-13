@@ -46,15 +46,16 @@ The functional requirements of the system are grouped into 5 main areas:
 
 1. Requirements related to **inputs**, that is accepted format, encoding, sources, etc.
 2. Requirements related to the **player**, the tool responsible for decoding the input signals, standardizing them, and applying any coarse-grained transformations. This tool also handles the display of video and compensates for any delays introduced by the audio processor chain. Optimal video display is not a priority in this project.
-3. Requirements related to the Digital Signal Processor (DSP), the tool responsible for performing qualitative transformations on the input signals (**re-mastering DSP**) and mapping input channels in the physical **speakers' management**. It represents the core of the system and is implemented through a pipeline of SW and HW digital audio processors.
-4. Functional requirements related to the **listening room configuration**, which involves setting up the physical layout, cabling, positioning of speakers, and acoustic treatment to achieve the desired listening experience.
-5. Requirements related to **control applications**, through which the listener can interact with the player and the DSP system (selecting songs, adjusting volume, changing listening configurations). Typically, this interaction is done using a tablet or a standard smartphone.
+3. Requirements related to the **creative use of Digital Signal Processors (DSP)**, the tool responsible for performing subjective transformations on the input signals
+4. **speakers' management** for mapping audio channels in the physical array of speakers and performing Digital Room Correction DRC)
+5. Functional requirements related to the **listening room configuration**, which involves setting up the physical layout, cabling, positioning of speakers, and acoustic treatment to achieve the desired listening experience.
+6. Requirements related to **control applications**, through which the listener can interact with the player and the DSP system (selecting songs, adjusting volume, changing listening configurations). Typically, this interaction is done using a tablet or a standard smartphone.
 
 Here is a functional view of the system:
 
 ![functional view](images/functional-view.png)
 
-The heart of the system is undoubtedly the chain of digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network.
+The heart of the system is undoubtedly the chain of ivolved digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for creative re-mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network.
 
 Some possible signal routing enabled by liroma are summarized in the following figure:
 
@@ -87,9 +88,13 @@ If not all features can be fulfilled by a single sw player, different specialize
 The player system is also responsible for the upmixing and for the auralization (e.g. from stereo to 7.1 channels) of the digital sources.
 
 ### Re-mastering DSP requirements
-- re-mastering MUST occur in the player system.
+- re-mastering COULD occur in the player system.
 - The re-mastering sub-system SHOULD support VST plugins 
 - Plugin processing SHOULD work at least with 32bit of resolution.
+
+
+The typical use case is:
+- a stereo stream is spatialized by a SW DSP at the player level that transforms it into a 7.1 source
 
 > Because liroma is an OUTPUT only processor, the latency is a minor problem. You can use big buffers to optimize the plugins performances. When possible prefer quality instead of low latency. If video is supported, a delay on video stream could be needed.
 
@@ -101,7 +106,6 @@ The main objective of the Speakers' management is to map X input channels into Y
 - bass management MUST take into account the room modal response
   
 The typical use case is:
-- a stereo stream is spatialized by a SW DSP at the player level that transforms it into a 7.1 source
 - the 8 channel input is routed to a 15.3 speaker configuration simulating AES 7.1 speaker placement requirement
 - the bass management optimizes each speaker's bandwidth according to source specifications
 
