@@ -6,7 +6,7 @@ MY-FI LIstening ROom Modelized by Auralization and other digital processing
 
 
 ## Abstract
-This project aims to utilize audio signal spatialization technologies, convolution, and auralization to create a personal, software configurable, immersive listening room.
+This project aims to use audio signal spatialization technologies, convolution, and auralization to create a personal, software configurable, immersive listening room.
 
 The designed system intends to reproduce the desired sound, environment, and timbre from any digital audio source, regardless of its encoding, format, resolution, or number of channels.
 
@@ -21,12 +21,12 @@ For instance, the reverb we hear in numerous recordings is rarely real; it is me
 Currently, there are [standards](https://www.aes.org/e-lib/browse.cfm?elib=4782) for "pro" listening rooms, specifically control and mastering rooms designed for multichannel productions.
 From the consumer point of view, the extreme subjectivity regarding the aesthetic judgment of sound reproduction has recently given rise to the notion of [MY-FI](https://www.afdigitale.it/my-fi-audio-una-necessaria-e-logica-personalizzazione/), acknowledging the impossibility of having a *perfect system* that sounds excellent in any environment and with any music genre. Even listening to the signal in a production studio often does not satisfy purely hedonistic points of view; indeed, many audiophiles describe such sound as fatiguing, cold, excessively detailed, and so on.
 
-In essence, it can be affirmed that each audio system possesses its own distinctive qualitative characteristics resulting from the combination of equipment, preferred music genre, source signal, and listening environment. The latter is understood in its broadest sense, encompassing the room's geometry, construction materials, furnishings, acoustic treatment, placement of audio equipment, and even the most minute accessories, which are the domain of *fine-tuning* enthusiasts.
+In essence, it can be affirmed that each audio system have its own distinctive qualitative characteristics resulting from the combination of equipment, preferred music genre, source signal, and listening environment. The latter is understood in its broadest sense, encompassing the room's geometry, construction materials, furnishings, acoustic treatment, placement of audio equipment, and even the most minute accessories, which are the domain of *fine-tuning* enthusiasts.
 
 
 
 ## Vision and Project's Objective
-The vision of this project is to utilize modern audio rendering technologies, convolution, and auralization to create a home listening room that can replicate the emotional experience obtained in various reference environments (HI end reference systems, acoustic concerts, jazz clubs, cinemas, pop concerts, etc. etc.). All of this should be achievable within a single environment, at reasonable costs, and with the ability to virtually change the audio system configuration for each musical track, adapting it to individual aesthetic preferences.
+The vision of this project is to use modern audio rendering technologies, convolution, and auralization to create a home listening room that can replicate the emotional experience obtained in various reference environments (HI end reference systems, acoustic concerts, jazz clubs, cinemas, pop concerts, etc. etc.). All of this should be achievable within a single environment, at reasonable costs, and with the ability to virtually change the audio system configuration for each musical track, adapting it to individual aesthetic preferences.
 
 The fundamental idea behind the project is to describe, using mathematical tools in the digital domain (i.e., impulses):
 - the transfer function of a reference listening room where a specific audio reproduction setup (*target environment*) operates;
@@ -44,11 +44,11 @@ Taking note of the extreme difficulties to use auralization algorithms in non-an
 ## Requirements
 The functional requirements of the system are grouped into 5 main areas:
 
-1. Requirements related to **input signals**, which highlight the compatible inputs with the audio reproduction system.
+1. Requirements related to **inputs**, that is accepted format, encoding, sources, etc.
 2. Requirements related to the **player**, the tool responsible for decoding the input signals, standardizing them, and applying any coarse-grained transformations. This tool also handles the display of video and compensates for any delays introduced by the audio processor chain. Optimal video display is not a priority in this project.
 3. Requirements related to the Digital Signal Processor (DSP), the tool responsible for performing qualitative transformations on the input signals (**re-mastering DSP**) and mapping input channels in the physical **speakers' management**. It represents the core of the system and is implemented through a pipeline of SW and HW digital audio processors.
 4. Functional requirements related to the **listening room configuration**, which involves setting up the physical layout, cabling, positioning of speakers, and acoustic treatment to achieve the desired listening experience.
-5. Requirements related to **control applications**, through which the listener can interact with the system (selecting songs, adjusting volume, changing listening configurations). Typically, this interaction is done using a tablet or a standard smartphone.
+5. Requirements related to **control applications**, through which the listener can interact with the player and the DSP system (selecting songs, adjusting volume, changing listening configurations). Typically, this interaction is done using a tablet or a standard smartphone.
 
 Here is a functional view of the system:
 
@@ -62,11 +62,12 @@ Some possible signal routing enabled by liroma are summarized in the following f
 
 The red devices configuration and the signal routing should be managed by a the control application
 
-### Input signals requirements
+### Input requirements
 - The input SHOULD be captured directly in the source digital domain, for instance in files with lossless compression encoding, or directly from the streaming service
 - Analogic sources MUST be sampled at 44.1K 24-bit by high-quality converters
+- Some DRM decoder COULD be provided by the player, even if any DRM SHOULD be removed before to be played by LIROMA.
 
-> Note that for DRM, Dolby ATMOS encoded sources, at present, cant be processed in the digital domain, so  a dolby ATMOS decoder is needed, and its output MUST be re-sampled back to the digital domain. In other words, sources protected by DRM must be treated as analogic sources. For personal use, some sw allows to remove DRM. This apply to Blu Ray to some formats but not yet to dolby ATMOS.
+> Note that for DRM protection, Dolby ATMOS encoded sources, at present, can't be processed in the digital domain, so  an HW dolby ATMOS decoder is needed, and its output MUST be re-sampled back to the digital domain. In other words, sources protected by DRM must be treated as analogic sources. For personal use, some sw allows to remove DRM. This apply to Blu Ray to some formats but not yet to dolby ATMOS.
 
 ### Player system requirements
 - It MUST support DNLA protocol
@@ -76,11 +77,12 @@ The red devices configuration and the signal routing should be managed by a the 
 - It MUST support re-mastering features (e.g. implement a VST HOST)
 - It SHOULD support video sources
 - It SHOULD support latency sync with video (e.g. lipsync feature)
-- It MUST NOT introduce any digital processing out of the user's control. That is, the path of the digital signal MUST be traceable END-TO-END
+- the path of the digital signal MUST be traceable END-TO-END; this means the any transformations to the digital signal performed by the player, by the plugins, and by the DSP MUST be documented and declared
+- it MUST allow to bypass all processing from the input to the DAC (bit-perfect mode)
   
-If not all features can be fulfilled by a single sw player, different specialized players CAN be adopted. For example a SW player for files and a VST host for external digital sources.
+If not all features can be fulfilled by a single sw player, different specialized players CAN be adopted. For example a SW player for files, a special player for DRM protected streams, a VST host for re-mastering external digital sources, etc. etc.
 
-> Note that some old OS and a few of audio drivers introduce a system level processing that resample digital audio and apply other unclear transformation. ALL audio feature at operative system level MUST be disabled. All DSP MUST occur at player level or at re-mastering level (e.g. VST plugins)
+> Note that some old OS and a few of audio drivers introduce a system level processing that resample digital audio and apply other unclear transformation. ALL audio feature at operative system level MUST be disabled. All digital signal processing MUST occur at re-mastering level (e.g. VST plugins) or at speaker management level.
 
 The player system is also responsible for the upmixing and for the auralization (e.g. from stereo to 7.1 channels) of the digital sources.
 
@@ -104,16 +106,18 @@ The typical use case is:
 - the bass management optimizes each speaker's bandwidth according to source specifications
 
 ### Listening room requirements
-- it SHOULD limit resonances in the hotspot with a flat response as much as possible.
-- it SHOULD have a semi-permanent physical configuration
-- it SHOULD NOT contain noising equipment
-- it MUST ensure less than 30dB SPL of the noise floor
+- it SHOULD limit resonances in the hot spot providing a flat response as much as possible.
+- it SHOULD have a semi-permanent physical configuration, that is that the decor of the room doesn't have to change much
+- it MUST ensure less than 30dB SPL of the noise floor, that is it SHOULD NOT contain noising equipment
 
 
 ### Control applications requirements
+The control application provides simple user interface to the liroma system. In principle is performed by one or more app used by the listener directly in the hot spot; e.g. a mobile app on smartphone o tablet, one or more web app on a laptop, a special surface control device, etc.
+
 - it MUST allow to select the input source
-- it MUST act as a  remote player controller
-- it MUST switch the configuration of the rooms (scene, HW presets, volume, etc.)
+- it MUST allow change/mute the system master volume
+- it MUST act as a remote player controller
+- it SHOULD allow switching the logical configuration of the rooms (i.e. to change scenes, DSP presets, HW config,  etc.)
 
 ## Constraints
 Despite the attempt to operate as scientifically as possible, it is reasonable to assume that in practice, some ideal conditions in the theory may not be met, and compromises may be necessary. These compromises will make the results of this project subjective and difficult to replicate. With this awareness, we accept the following constraints:
@@ -277,7 +281,7 @@ This project is Copyright by Enrico Fagnoni and is released under the [CC BY 4.0
 
 
 
-## References
+## References & acknowledgments
 This project owes its existence to the extraordinary works of some authors, to whom I have the greatest admiration:
 
 - AA.VV by Yamaha [Multichannel Monitoring Tutorial Booklet - PDF](https://jp.yamaha.com/files/download/other_assets/5/331225/M2TB_r352E.pdf)
@@ -287,3 +291,5 @@ This project owes its existence to the extraordinary works of some authors, to w
 - Bob Kats - [Mastering Audio: The Art and the Science](https://www.amazon.it/Mastering-Audio-Science-Bob-Katz/dp/0240818962).
 - David Monacchi - [FRAGMENTS OF EXTINCTION](https://www.fragmentsofextinction.org/)
 - Alaa Algargoosh and John Granzow [How can a room shape your voice?](https://acoustics.org/2aaa-developing-a-new-method-for-analyzing-room-acoustics-based-on-auralization-how-can-a-room-shape-your-voice/)
+
+I would like to thank Danilo, Giorgio, Sergio, and all the members of the 'Audiofili gaudenti' group for their valuable advice.
