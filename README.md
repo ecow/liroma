@@ -55,7 +55,7 @@ Here is a functional view of the system:
 
 ![functional view](images/functional-view.png)
 
-The heart of the system is undoubtedly the chain of ivolved digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for creative re-mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network.
+The heart of the system is undoubtedly the chain of involved digital processors. The current hypothesis for this project (any advice and alternatives are welcome) is to use a VST host and a series of VST plugins for creative re-mastering functions, along with some hardware DSP processors to handle bass management, dynamic range control (DRC), and time alignment in the speaker network.
 
 Some possible signal routing enabled by liroma are summarized in the following figure:
 
@@ -66,7 +66,7 @@ Some possible signal routing enabled by liroma are summarized in the following f
 ### Input requirements
 - The input SHOULD be captured directly in the source digital domain, for instance in files with lossless compression encoding, or directly from the streaming service
 - Analogic sources MUST be sampled at 44.1K 24-bit by high-quality converters
-- Some DRM decoder COULD be provided by the player, even if any DRM SHOULD be removed before to be played by LIROMA.
+- Some DRM decoder COULD be provided by the player, even if any DRM SHOULD be removed before to be played by liroma.
 
 > Note that for DRM protection, Dolby ATMOS encoded sources, at present, can't be processed in the digital domain, so  an HW dolby ATMOS decoder is needed, and its output MUST be re-sampled back to the digital domain. In other words, sources protected by DRM must be treated as analogic sources. For personal use, some sw allows to remove DRM. This apply to Blu Ray to some formats but not yet to dolby ATMOS.
 
@@ -91,6 +91,7 @@ The player system is also responsible for the upmixing and for the auralization 
 - re-mastering COULD occur in the player system.
 - The re-mastering sub-system SHOULD support VST plugins 
 - Plugin processing SHOULD work at least with 32bit of resolution.
+- It MUST be able to setup a set of customized [home curve](https://www.researchgate.net/figure/Subjectively-preferred-steady-state-room-curve-targets-in-a-typical-domestic-listening_fig6_283039780)
 
 
 The typical use case is:
